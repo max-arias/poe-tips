@@ -9,6 +9,7 @@ interface Props {
 
 const TipsGrid: Component<Props> = (props) => {
     const [query, setQuery] = createSignal('');
+    const [selectedTag, setSelectedTag] = createSignal<string | null>(null);
     const [fuse, setFuse] = createSignal<any>(null);
 
     onMount(() => {
@@ -18,17 +19,35 @@ const TipsGrid: Component<Props> = (props) => {
 
     const results = createMemo(() => {
         const q = query();
+        const tag = selectedTag();
         const f = fuse();
 
+        let filtered = props.initialTips;
+
+        // 1. Filter by Tag first (if selected)
+        if (tag) {
+            filtered = filtered.filter(tip => tip.tags.includes(tag));
+        }
+
+        // 2. Filter by Search Query
         if (!q || q.trim() === '') {
-            return props.initialTips;
+            return filtered;
         }
 
         if (f) {
-            return f.search(q).map((r: any) => r.item);
+            // If we have a tag filter, we might want to search ONLY within that subset.
+            // However, Fuse indexes the whole set. 
+            // A simple approach: Search global, then intersect with tag filter.
+            // OR: Re-instantiate fuse? No, too expensive.
+            // Better: Search global, then filter results by tag.
+            const searchResults = f.search(q).map((r: any) => r.item);
+            if (tag) {
+                return searchResults.filter((tip: Tip) => tip.tags.includes(tag));
+            }
+            return searchResults;
         }
 
-        return props.initialTips;
+        return filtered;
     });
 
     return (
@@ -49,16 +68,35 @@ const TipsGrid: Component<Props> = (props) => {
                     </div>
                 </div>
 
-                <div class="mt-2 text-sm text-gray-500 flex justify-between">
-                    <Show when={query().length > 0} fallback={<span>Showing all tips</span>}>
-                        <span>Found {results().length} tips</span>
+                <div class="mt-4 flex items-center justify-between">
+                    <div class="text-sm text-gray-500">
+                        <Show when={query().length > 0 || selectedTag()} fallback={<span>Showing all tips</span>}>
+                            <span>Found {results().length} tips</span>
+                        </Show>
+                    </div>
+
+                    <Show when={selectedTag()}>
+                        <button
+                            onClick={() => setSelectedTag(null)}
+                            class="text-xs flex items-center gap-1 bg-orange-900/30 text-orange-300 px-3 py-1 rounded-full border border-orange-800 hover:bg-orange-900/50 transition-colors"
+                        >
+                            <span>Filter: #{selectedTag()}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
                     </Show>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <For each={results()}>
-                    {(tip) => <TipCard tip={tip} />}
+                    {(tip) => (
+                        <TipCard
+                            tip={tip}
+                            onTagClick={(tag) => setSelectedTag(tag)}
+                        />
+                    )}
                 </For>
             </div>
         </>

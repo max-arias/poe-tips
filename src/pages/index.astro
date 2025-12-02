@@ -18,23 +18,50 @@ try {
         console.warn('POCKETBASE_ADMIN_EMAIL or POCKETBASE_ADMIN_PASSWORD not set. Fetching public data only.');
     }
 
+    // Fetch active leagues to determine status
+    const activeLeagues = await pb.collection('leagues').getFullList({
+        filter: 'is_active = true',
+    });
+    const activeLeagueIds = new Set(activeLeagues.map(l => l.id));
+    // Determine current version (e.g. from the challenge league)
+    const currentVersion = activeLeagues.find(l => l.slug !== 'standard')?.version || activeLeagues[0]?.version || '3.25';
+
     const records = await pb.collection('tips').getList(1, 50, {
         // sort: '-created',
-        expand: 'author',
+        expand: 'author,leagues',
     });
     
-    tips = records.items.map(record => ({
-        id: record.id,
-        title: record.title,
-        content: record.content,
-        tags: record.tags || [],
-        leagues: record.leagues || [],
-        author: record.expand?.author?.name || record.expand?.author?.username || 'Unknown',
-        vote_count: record.vote_count,
-        patch_created: record.patch_created,
-        last_verified_patch: record.last_verified_patch,
-        is_broken: record.is_broken
-    }));
+    tips = records.items.map(record => {
+        const tipLeagues = record.expand?.leagues || [];
+        const tipLeagueIds = tipLeagues.map((l: any) => l.id);
+        const isUniversal = tipLeagueIds.length === 0;
+        const hasActiveLeague = tipLeagueIds.some((id: string) => activeLeagueIds.has(id));
+        
+        let status: Tip['status'] = 'stale';
+        
+        if (record.is_broken) {
+            status = 'dead';
+        } else if (!isUniversal && !hasActiveLeague) {
+            status = 'legacy';
+        } else if (record.last_verified_patch === currentVersion) {
+            status = 'verified';
+        }
+        
+        return {
+            id: record.id,
+            title: record.title,
+            description: record.description,
+            content: record.content,
+            tags: record.tags || [],
+            leagues: tipLeagues.map((l: any) => l.name),
+            author: record.expand?.author?.name || record.expand?.author?.username || 'Unknown',
+            vote_count: record.vote_count,
+            patch_created: record.patch_created,
+            last_verified_patch: record.last_verified_patch,
+            is_broken: record.is_broken,
+            status
+        };
+    });
 } catch (e) {
     console.error('Failed to fetch tips:', e);
     // Fallback to empty or dummy data if needed, but for now just log

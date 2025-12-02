@@ -4,6 +4,7 @@ import { expandAcronyms } from './acronyms';
 export interface Tip {
     id: string;
     title: string;
+    description: string;
     content: string;
     tags: string[];
     leagues: string[];
@@ -13,6 +14,7 @@ export interface Tip {
     last_verified_patch: string;
     is_broken: boolean;
     _search_tokens?: string; // Hidden field for search
+    status?: 'verified' | 'stale' | 'legacy' | 'dead';
 }
 
 export function prepareTipsForSearch(tips: Tip[]): Tip[] {

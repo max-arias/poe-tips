@@ -160,6 +160,28 @@ migrate((app) => {
           "presentable": false,
           "system": false,
           "type": "autodate"
+        },
+        {
+          "hidden": false,
+          "id": "number276432882",
+          "max": null,
+          "min": null,
+          "name": "reputation",
+          "onlyInt": true,
+          "presentable": false,
+          "required": false,
+          "system": false,
+          "type": "number"
+        },
+        {
+          "hidden": false,
+          "id": "json3088296658",
+          "maxSize": 0,
+          "name": "badges",
+          "presentable": false,
+          "required": false,
+          "system": false,
+          "type": "json"
         }
       ],
       "fileToken": {
@@ -838,6 +860,20 @@ migrate((app) => {
           "type": "text"
         },
         {
+          "autogeneratePattern": "",
+          "hidden": false,
+          "id": "text1874629670",
+          "max": 140,
+          "min": 0,
+          "name": "description",
+          "pattern": "",
+          "presentable": false,
+          "primaryKey": false,
+          "required": false,
+          "system": false,
+          "type": "text"
+        },
+        {
           "hidden": false,
           "id": "json1874629670",
           "maxSize": 0,
@@ -848,14 +884,17 @@ migrate((app) => {
           "type": "json"
         },
         {
+          "cascadeDelete": false,
+          "collectionId": "pbc_37895261",
           "hidden": false,
-          "id": "json140305310",
-          "maxSize": 0,
+          "id": "relation140305310",
+          "maxSelect": 999,
+          "minSelect": 0,
           "name": "leagues",
           "presentable": false,
           "required": false,
           "system": false,
-          "type": "json"
+          "type": "relation"
         },
         {
           "cascadeDelete": false,
@@ -1164,6 +1203,119 @@ migrate((app) => {
       "viewRule": ""
     }
   ];
+
+  const leagues = {
+    "createRule": null,
+    "deleteRule": null,
+    "fields": [
+      {
+        "autogeneratePattern": "[a-z0-9]{15}",
+        "hidden": false,
+        "id": "text3208210256",
+        "max": 15,
+        "min": 15,
+        "name": "id",
+        "pattern": "^[a-z0-9]+$",
+        "presentable": false,
+        "primaryKey": true,
+        "required": true,
+        "system": true,
+        "type": "text"
+      },
+      {
+        "autogeneratePattern": "",
+        "hidden": false,
+        "id": "text232426666",
+        "max": 0,
+        "min": 0,
+        "name": "name",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": true,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "autogeneratePattern": "",
+        "hidden": false,
+        "id": "text289388888",
+        "max": 0,
+        "min": 0,
+        "name": "slug",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": true,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "autogeneratePattern": "",
+        "hidden": false,
+        "id": "text389388888",
+        "max": 0,
+        "min": 0,
+        "name": "version",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "hidden": false,
+        "id": "bool123456789",
+        "name": "is_active",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "bool"
+      },
+      {
+        "hidden": false,
+        "id": "date123456789",
+        "max": "",
+        "min": "",
+        "name": "start_date",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "date"
+      },
+      {
+        "hidden": false,
+        "id": "autodate2990389176",
+        "name": "created",
+        "onCreate": true,
+        "onUpdate": false,
+        "presentable": false,
+        "system": true,
+        "type": "autodate"
+      },
+      {
+        "hidden": false,
+        "id": "autodate3332085495",
+        "name": "updated",
+        "onCreate": true,
+        "onUpdate": true,
+        "presentable": false,
+        "system": true,
+        "type": "autodate"
+      }
+    ],
+    "id": "pbc_37895261",
+    "indexes": [],
+    "listRule": "",
+    "name": "leagues",
+    "system": false,
+    "type": "base",
+    "updateRule": null,
+    "viewRule": ""
+  };
+
+  snapshot.push(leagues);
 
   return app.importCollections(snapshot, false);
 }, (app) => {

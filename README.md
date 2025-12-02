@@ -1,46 +1,67 @@
-# Astro Starter Kit: Basics
+# PoE Tips
 
-```sh
-bun create astro@latest -- --template basics
-```
+A community-driven repository of short-form Path of Exile tips, built with performance and usability in mind.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tech Stack
 
-## 🚀 Project Structure
+- **Frontend**: [Astro](https://astro.build/)
+- **Interactivity**: [SolidJS](https://www.solidjs.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Search**: [Fuse.js](https://fusejs.io/)
+- **Backend**: [PocketBase](https://pocketbase.io/)
+- **Runtime/Package Manager**: [Bun](https://bun.sh/)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Prerequisites
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+2.  **PocketBase**:
+    - Download the latest release (v0.25+) from [pocketbase.io](https://pocketbase.io/docs/).
+    - Place the `pocketbase` executable in a `pocketbase` directory in the project root (or anywhere you prefer, but update paths accordingly).
+    - **Note**: The project assumes PocketBase is running at `http://127.0.0.1:8090`.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Local Development
 
-## 🧞 Commands
+1.  **Install Dependencies**:
+    ```bash
+    bun install
+    ```
 
-All commands are run from the root of the project, from a terminal:
+2.  **Environment Setup**:
+    Copy `.env.example` to `.env` and set your PocketBase admin credentials:
+    ```bash
+    cp .env.example .env
+    ```
+    Edit `.env` with your desired credentials
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+3.  **Start PocketBase**:
+    Run the setup script to download and extract PocketBase:
+    ```bash
+    bun run scripts/setup-pb.ts
+    ```
+    Then start the server:
+    ```bash
+    ./pocketbase/pocketbase serve
+    ```
+    Access the Admin UI at `http://127.0.0.1:8090/_/`.
 
-## 👀 Want to learn more?
+4.  **Initialize Schema**:
+    Run the migrations to create collections and rules.
+    ```bash
+    ./pocketbase/pocketbase migrate up
+    ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+5.  **Seed Data**:
+    Populate the database with sample tips.
+    ```bash
+    bun run scripts/seed-pb.ts
+    ```
+
+6.  **Start Astro**:
+    ```bash
+    bun run dev
+    ```
+
+## Utility Scripts
+
+*   `scripts/seed-pb.ts`: Seeds the database with data from `src/data/tips.json`.
+*   `scripts/reset-pb.ts`: **WARNING** Deletes all collections and data. Use with caution.
+*   `scripts/inspect-tips.ts`: Debugging script to inspect `tips` collection and test fetching.

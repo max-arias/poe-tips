@@ -40,7 +40,7 @@ export function expandAcronyms(text: string): string {
     const expandedTokens = tokens.map(token => {
         // Check if token is an acronym
         if (acronyms[token]) {
-            return acronyms[token];
+            return `${token} ${acronyms[token]}`;
         }
         // Check if token is the full name (reverse lookup - simple version)
         // For now, we just inject the acronym if the full name is found? 

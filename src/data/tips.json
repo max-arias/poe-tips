@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "RF Sustain Basics",
+    "content": "To sustain Righteous Fire, you need high fire resistance (75%+) and life regeneration. Purity of Fire is mandatory early on.",
+    "tags": ["rf", "righteous fire", "sustain", "basics"],
+    "leagues": ["Core"],
+    "author": "PoeGuru",
+    "vote_count": 42,
+    "patch_created": "3.24",
+    "last_verified_patch": "3.25",
+    "is_broken": false
+  },
+  {
+    "id": "2",
+    "title": "CoC Breakpoints",
+    "content": "For Cast on Crit, you need to match your attack speed to your cooldown recovery rate. 7.57 APS for 14% CDR.",
+    "tags": ["coc", "cast on crit", "breakpoints", "mechanics"],
+    "leagues": ["Core"],
+    "author": "MathilFan",
+    "vote_count": 128,
+    "patch_created": "3.20",
+    "last_verified_patch": "3.25",
+    "is_broken": false
+  },
+  {
+    "id": "3",
+    "title": "Chaos Recipe",
+    "content": "Vendor a full set of rare items (ilvl 60-74) to get 2 Chaos Orbs. Unidentified gives 2, identified gives 1.",
+    "tags": ["currency", "leveling", "vendor recipe"],
+    "leagues": ["Core"],
+    "author": "NewbieHelper",
+    "vote_count": 15,
+    "patch_created": "1.0",
+    "last_verified_patch": "3.25",
+    "is_broken": false
+  }
+]

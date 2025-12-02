@@ -1,11 +1,75 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Search from '../components/Search.astro';
+import TipCard from '../components/TipCard.astro';
+import tipsData from '../data/tips.json';
+import { prepareTipsForSearch } from '../lib/search';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Pre-calculate search tokens for the client
+const preparedTips = prepareTipsForSearch(tipsData);
 ---
 
 <Layout>
-	<Welcome />
+  <main class="container mx-auto px-4 py-8" x-data={`{
+    allTips: ${JSON.stringify(preparedTips)},
+    results: [],
+    query: '',
+    init() {
+      this.results = this.allTips;
+      
+      // Initialize Fuse
+      import('../lib/search').then(({ createFuseInstance }) => {
+        this.fuse = createFuseInstance(this.allTips);
+      });
+    },
+    performSearch() {
+      if (!this.query || this.query.trim() === '') {
+        this.results = this.allTips;
+        return;
+      }
+      
+      if (this.fuse) {
+        this.results = this.fuse.search(this.query).map(r => r.item);
+      }
+    }
+  }`}>
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-orange-500 mb-2">PoE Tips Grid</h1>
+      <p class="text-gray-400">Community-driven knowledge for Path of Exile.</p>
+    </header>
+
+    <div class="max-w-2xl mx-auto">
+      <Search />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <template x-for="tip in results" :key="tip.id">
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-gray-500 transition-colors shadow-sm">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-lg font-bold text-orange-400" x-text="tip.title"></h3>
+                <span class="text-xs text-gray-500 bg-gray-900 px-2 py-1 rounded" x-text="'v' + tip.patch_created"></span>
+            </div>
+            
+            <p class="text-gray-300 mb-4 text-sm leading-relaxed" x-text="tip.content"></p>
+            
+            <div class="flex flex-wrap gap-2 mb-3">
+                <template x-for="tag in tip.tags">
+                    <span class="text-xs bg-gray-700 text-gray-300 px-2 py-0.5 rounded-full" x-text="'#' + tag"></span>
+                </template>
+            </div>
+            
+            <div class="flex justify-between items-center text-xs text-gray-500 border-t border-gray-700 pt-2 mt-2">
+                <span x-text="'By ' + tip.author"></span>
+                <div class="flex items-center gap-1">
+                <span x-text="'▲ ' + tip.vote_count"></span>
+                </div>
+            </div>
+        </div>
+      </template>
+    </div>
+    
+    <!-- Fallback for no JS / Initial Load (Optional, but good for SEO if we duplicate content) -->
+    <!-- For now, we rely on Alpine for the grid rendering as per the "Smart Search" requirement -->
+    
+  </main>
 </Layout>

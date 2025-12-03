@@ -1,3 +1,7 @@
+---
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,9 +10,10 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>PoE Tips Grid</title>
-        <link rel="stylesheet" href="/src/styles/global.css" />
+		<link rel="stylesheet" href="/src/styles/global.css" />
 	</head>
 	<body class="bg-gray-900 text-gray-100 min-h-screen">
+		<Header />
 		<slot />
 	</body>
 </html>

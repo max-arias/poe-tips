@@ -5,6 +5,7 @@ import TipCard from './TipCard';
 
 interface Props {
     initialTips: Tip[];
+    acronyms: Record<string, string>;
 }
 
 const TipsGrid: Component<Props> = (props) => {
@@ -14,7 +15,7 @@ const TipsGrid: Component<Props> = (props) => {
 
     onMount(() => {
         // Initialize Fuse on the client side
-        setFuse(createFuseInstance(props.initialTips));
+        setFuse(createFuseInstance(props.initialTips, props.acronyms));
     });
 
     const results = createMemo(() => {

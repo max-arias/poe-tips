@@ -17,10 +17,10 @@ export interface Tip {
     status?: 'verified' | 'stale' | 'legacy' | 'dead';
 }
 
-export function prepareTipsForSearch(tips: Tip[]): Tip[] {
+export function prepareTipsForSearch(tips: Tip[], acronyms: Record<string, string>): Tip[] {
     return tips.map(tip => {
         const combinedText = `${tip.title} ${tip.content} ${tip.tags.join(' ')}`;
-        const searchTokens = expandAcronyms(combinedText);
+        const searchTokens = expandAcronyms(combinedText, acronyms);
         return {
             ...tip,
             _search_tokens: searchTokens
@@ -28,8 +28,8 @@ export function prepareTipsForSearch(tips: Tip[]): Tip[] {
     });
 }
 
-export function createFuseInstance(tips: Tip[]) {
-    const preparedTips = prepareTipsForSearch(tips);
+export function createFuseInstance(tips: Tip[], acronyms: Record<string, string>) {
+    const preparedTips = prepareTipsForSearch(tips, acronyms);
 
     return new Fuse(preparedTips, {
         keys: [

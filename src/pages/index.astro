@@ -1,52 +1,64 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TipsGrid from '../components/TipsGrid.tsx';
-import { prepareTipsForSearch, type Tip } from '../lib/search';
-import PocketBase from 'pocketbase';
+import Layout from "../layouts/Layout.astro";
+import TipsGrid from "../components/TipsGrid.tsx";
+import { prepareTipsForSearch, type Tip } from "../lib/search";
+import PocketBase from "pocketbase";
 
 // Fetch tips from PocketBase
 let tips: Tip[] = [];
+let acronymsMap: Record<string, string> = {};
 try {
-    const pb = new PocketBase('http://127.0.0.1:8090');
+    const pb = new PocketBase("http://127.0.0.1:8090");
     // Authenticate as admin for build process to ensure we can read everything including users
-    const email = import.meta.env.POCKETBASE_ADMIN_EMAIL || process.env.POCKETBASE_ADMIN_EMAIL;
-    const password = import.meta.env.POCKETBASE_ADMIN_PASSWORD || process.env.POCKETBASE_ADMIN_PASSWORD;
-    
+    const email =
+        import.meta.env.POCKETBASE_ADMIN_EMAIL ||
+        process.env.POCKETBASE_ADMIN_EMAIL;
+    const password =
+        import.meta.env.POCKETBASE_ADMIN_PASSWORD ||
+        process.env.POCKETBASE_ADMIN_PASSWORD;
+
     if (email && password) {
         await pb.admins.authWithPassword(email, password);
     } else {
-        console.warn('POCKETBASE_ADMIN_EMAIL or POCKETBASE_ADMIN_PASSWORD not set. Fetching public data only.');
+        console.warn(
+            "POCKETBASE_ADMIN_EMAIL or POCKETBASE_ADMIN_PASSWORD not set. Fetching public data only.",
+        );
     }
 
     // Fetch active leagues to determine status
-    const activeLeagues = await pb.collection('leagues').getFullList({
-        filter: 'is_active = true',
+    const activeLeagues = await pb.collection("leagues").getFullList({
+        filter: "is_active = true",
     });
-    const activeLeagueIds = new Set(activeLeagues.map(l => l.id));
+    const activeLeagueIds = new Set(activeLeagues.map((l) => l.id));
     // Determine current version (e.g. from the challenge league)
-    const currentVersion = activeLeagues.find(l => l.slug !== 'standard')?.version || activeLeagues[0]?.version || '3.25';
+    const currentVersion =
+        activeLeagues.find((l) => l.slug !== "standard")?.version ||
+        activeLeagues[0]?.version ||
+        "3.25";
 
-    const records = await pb.collection('tips').getList(1, 50, {
+    const records = await pb.collection("tips").getList(1, 50, {
         // sort: '-created',
-        expand: 'author,leagues',
+        expand: "author,leagues",
     });
-    
-    tips = records.items.map(record => {
+
+    tips = records.items.map((record) => {
         const tipLeagues = record.expand?.leagues || [];
         const tipLeagueIds = tipLeagues.map((l: any) => l.id);
         const isUniversal = tipLeagueIds.length === 0;
-        const hasActiveLeague = tipLeagueIds.some((id: string) => activeLeagueIds.has(id));
-        
-        let status: Tip['status'] = 'stale';
-        
+        const hasActiveLeague = tipLeagueIds.some((id: string) =>
+            activeLeagueIds.has(id),
+        );
+
+        let status: Tip["status"] = "stale";
+
         if (record.is_broken) {
-            status = 'dead';
+            status = "dead";
         } else if (!isUniversal && !hasActiveLeague) {
-            status = 'legacy';
+            status = "legacy";
         } else if (record.last_verified_patch === currentVersion) {
-            status = 'verified';
+            status = "verified";
         }
-        
+
         return {
             id: record.id,
             title: record.title,
@@ -54,32 +66,48 @@ try {
             content: record.content,
             tags: record.tags || [],
             leagues: tipLeagues.map((l: any) => l.name),
-            author: record.expand?.author?.name || record.expand?.author?.username || 'Unknown',
+            author:
+                record.expand?.author?.name ||
+                record.expand?.author?.username ||
+                "Unknown",
             vote_count: record.vote_count,
             patch_created: record.patch_created,
             last_verified_patch: record.last_verified_patch,
             is_broken: record.is_broken,
-            status
+            status,
         };
     });
+    // Fetch abbreviations
+    const abbreviations = await pb.collection("abbreviations").getFullList();
+    abbreviations.forEach((abbr) => {
+        acronymsMap[abbr.acronym.toLowerCase()] = abbr.definition;
+    });
 } catch (e) {
-    console.error('Failed to fetch tips:', e);
+    console.error("Failed to fetch tips:", e);
     // Fallback to empty or dummy data if needed, but for now just log
 }
 
 // Pre-calculate search tokens for the client
-const preparedTips = prepareTipsForSearch(tips);
+const preparedTips = prepareTipsForSearch(tips, acronymsMap);
 ---
 
 <Layout>
-  <main class="container mx-auto px-4 py-8">
-    <header class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-orange-500 mb-2">PoE Tips Grid</h1>
-      <p class="text-gray-400">Community-driven knowledge for Path of Exile.</p>
-    </header>
+    <main class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-orange-500 mb-2">
+                PoE Tips Grid
+            </h1>
+            <p class="text-gray-400">
+                Community-driven knowledge for Path of Exile.
+            </p>
+        </header>
 
-    <div class="max-w-4xl mx-auto">
-      <TipsGrid client:load initialTips={preparedTips} />
-    </div>
-  </main>
+        <div class="max-w-4xl mx-auto">
+            <TipsGrid
+                client:load
+                initialTips={preparedTips}
+                acronyms={acronymsMap}
+            />
+        </div>
+    </main>
 </Layout>

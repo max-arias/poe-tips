@@ -1,0 +1,48 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<header
+    class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-sm bg-opacity-90"
+>
+    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+            <span
+                class="text-2xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors"
+                >PoE Tips</span
+            >
+        </a>
+
+        <nav>
+            <ul class="flex items-center gap-6">
+                <li>
+                    <a
+                        href="/"
+                        class:list={[
+                            "text-sm font-medium transition-colors hover:text-orange-400",
+                            currentPath === ""
+                                ? "text-orange-500"
+                                : "text-gray-400",
+                        ]}
+                    >
+                        Tips
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/faqs"
+                        class:list={[
+                            "text-sm font-medium transition-colors hover:text-orange-400",
+                            currentPath.startsWith("faqs")
+                                ? "text-orange-500"
+                                : "text-gray-400",
+                        ]}
+                    >
+                        FAQs
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

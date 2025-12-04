@@ -1,0 +1,1677 @@
+[
+  {
+    "acronym": "A1N",
+    "definition": "Act 1 Normal (Historical)",
+    "category": "Map/Zone"
+  },
+  {
+    "acronym": "AA",
+    "definition": "Arctic Armour.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "AC",
+    "definition": "Ancestral Call",
+    "category": "Support"
+  },
+  {
+    "acronym": "AFK",
+    "definition": "Away From Keyboard. The player is not currently active.",
+    "category": "General"
+  },
+  {
+    "acronym": "AG",
+    "definition": "Animate Guardian",
+    "category": "Skill"
+  },
+  {
+    "acronym": "Aisling",
+    "definition": "Syndicate Master (Veiled Slam)",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "Alch",
+    "definition": "Orb of Alchemy",
+    "category": "Currency"
+  },
+  {
+    "acronym": "Alt",
+    "definition": "Orb of Alteration",
+    "category": "Currency"
+  },
+  {
+    "acronym": "Annul",
+    "definition": "Orb of Annulment",
+    "category": "Currency"
+  },
+  {
+    "acronym": "AoE",
+    "definition": "Area of Effect.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "AoF",
+    "definition": "Avatar of Fire",
+    "category": "Keystone"
+  },
+  {
+    "acronym": "APS",
+    "definition": "Attacks Per Second.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "AR",
+    "definition": "Armour Rating",
+    "category": "Stat"
+  },
+  {
+    "acronym": "Archmage",
+    "definition": "Archmage Support",
+    "category": "Support"
+  },
+  {
+    "acronym": "Aug",
+    "definition": "Orb of Augmentation",
+    "category": "Currency"
+  },
+  {
+    "acronym": "AW",
+    "definition": "Ancestral Warchief OR Animate Weapon, depending on context.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "B/O",
+    "definition": "Buyout",
+    "category": "Trade"
+  },
+  {
+    "acronym": "BAMA",
+    "definition": "Blink Arrow / Mirror Arrow",
+    "category": "Build"
+  },
+  {
+    "acronym": "BB",
+    "definition": "Blade Blast.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "BC",
+    "definition": "Burial Chambers",
+    "category": "Map"
+  },
+  {
+    "acronym": "BF",
+    "definition": "Blade Flurry or Bladefall.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "BiS",
+    "definition": "Best in Slot. The absolute best item possible for a specific gear slot in a build.",
+    "category": "General"
+  },
+  {
+    "acronym": "BL",
+    "definition": "Ball Lightning.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Blight",
+    "definition": "Blight Mechanic / Blight Spell",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "BM",
+    "definition": "Blood Magic (Keystone). Skills spend Life instead of Mana.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "Bonk",
+    "definition": "Slam Skills",
+    "category": "Slang"
+  },
+  {
+    "acronym": "BoR",
+    "definition": "Bringer of Rain (Unique Helmet).",
+    "category": "Items"
+  },
+  {
+    "acronym": "BP",
+    "definition": "Blueprint (Heist)",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "BV",
+    "definition": "Blade Vortex.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "C",
+    "definition": "Chaos Orb",
+    "category": "Currency"
+  },
+  {
+    "acronym": "CA",
+    "definition": "Caustic Arrow.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "CB",
+    "definition": "Corrupted Blood",
+    "category": "Debuff"
+  },
+  {
+    "acronym": "CC",
+    "definition": "Crowd Control (Freeze/Stun)",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "CD",
+    "definition": "Cooldown",
+    "category": "Stat"
+  },
+  {
+    "acronym": "CDR",
+    "definition": "Cooldown Recovery",
+    "category": "Stat"
+  },
+  {
+    "acronym": "CF",
+    "definition": "Corrupting Fever",
+    "category": "Skill"
+  },
+  {
+    "acronym": "Chaos",
+    "definition": "Chaos Orb",
+    "category": "Currency"
+  },
+  {
+    "acronym": "CI",
+    "definition": "Chaos Inoculation (Keystone). Maximum Life becomes 1, Immune to Chaos Damage.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "CoC",
+    "definition": "Cast On Critical Strike Support.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "CoD",
+    "definition": "Cast on Death",
+    "category": "Support"
+  },
+  {
+    "acronym": "CoH",
+    "definition": "Curse On Hit (now usually Hextouch Support).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Conc",
+    "definition": "Concentrated Effect",
+    "category": "Support"
+  },
+  {
+    "acronym": "CP",
+    "definition": "Consecrated Path",
+    "category": "Skill"
+  },
+  {
+    "acronym": "CwC",
+    "definition": "Cast While Channeling Support.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "CwDT",
+    "definition": "Cast When Damage Taken Support.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "D",
+    "definition": "Divine Orb",
+    "category": "Currency"
+  },
+  {
+    "acronym": "DB",
+    "definition": "Dominating Blow",
+    "category": "Skill"
+  },
+  {
+    "acronym": "DD",
+    "definition": "Detonate Dead.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Deli",
+    "definition": "Delirium",
+    "category": "League"
+  },
+  {
+    "acronym": "Div",
+    "definition": "Divine Orb",
+    "category": "Currency"
+  },
+  {
+    "acronym": "DoT",
+    "definition": "Damage over Time.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "DP",
+    "definition": "Dark Pact",
+    "category": "Skill"
+  },
+  {
+    "acronym": "DPS",
+    "definition": "Damage Per Second.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "DS",
+    "definition": "Double Strike / Desync",
+    "category": "Skill/Slang"
+  },
+  {
+    "acronym": "DW",
+    "definition": "Dual Wield",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "EA",
+    "definition": "Explosive Arrow.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "EB",
+    "definition": "Eldritch Battery (Keystone). Energy Shield protects Mana instead of Life.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "EC",
+    "definition": "Enduring Cry.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Echo",
+    "definition": "Spell Echo",
+    "category": "Support"
+  },
+  {
+    "acronym": "ED",
+    "definition": "Essence Drain.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "eDPS",
+    "definition": "Elemental Damage Per Second (usually on weapons).",
+    "category": "Stats"
+  },
+  {
+    "acronym": "EDWA",
+    "definition": "Elemental Damage with Attacks",
+    "category": "Support"
+  },
+  {
+    "acronym": "EE",
+    "definition": "Elemental Equilibrium (Keystone).",
+    "category": "Passives"
+  },
+  {
+    "acronym": "eHP",
+    "definition": "Effective Hit Points",
+    "category": "Stat"
+  },
+  {
+    "acronym": "EK",
+    "definition": "Ethereal Knives.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Ele",
+    "definition": "Elemental / Elementalist",
+    "category": "General"
+  },
+  {
+    "acronym": "Enlighten",
+    "definition": "Enlighten Support",
+    "category": "Support"
+  },
+  {
+    "acronym": "EO",
+    "definition": "Elemental Overload (Keystone).",
+    "category": "Passives"
+  },
+  {
+    "acronym": "EoW",
+    "definition": "Eater of Worlds / Eye of Winter",
+    "category": "Boss/Skill"
+  },
+  {
+    "acronym": "EQ",
+    "definition": "Earthquake",
+    "category": "Skill"
+  },
+  {
+    "acronym": "ES",
+    "definition": "Energy Shield.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "Eva / EV",
+    "definition": "Evasion Rating",
+    "category": "Stat"
+  },
+  {
+    "acronym": "Ex",
+    "definition": "Exalted Orb",
+    "category": "Currency"
+  },
+  {
+    "acronym": "Exarch",
+    "definition": "Searing Exarch",
+    "category": "Boss"
+  },
+  {
+    "acronym": "FA",
+    "definition": "Faster Attacks Support.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "FB",
+    "definition": "Frost Blades, Fireball, or Flameblast.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "FC",
+    "definition": "Faster Casting",
+    "category": "Support"
+  },
+  {
+    "acronym": "Flip",
+    "definition": "Market Manipulation",
+    "category": "Trade"
+  },
+  {
+    "acronym": "FP",
+    "definition": "Freezing Pulse.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "FR",
+    "definition": "Forbidden Rite",
+    "category": "Skill"
+  },
+  {
+    "acronym": "Fuse",
+    "definition": "Orb of Fusing",
+    "category": "Currency"
+  },
+  {
+    "acronym": "GC",
+    "definition": "Glacial Cascade.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "GCP",
+    "definition": "Gemcutter's Prism",
+    "category": "Currency"
+  },
+  {
+    "acronym": "GG",
+    "definition": "Good Game or Godly Gear. Used to describe very powerful items.",
+    "category": "General"
+  },
+  {
+    "acronym": "GGG",
+    "definition": "Grinding Gear Games",
+    "category": "Devs"
+  },
+  {
+    "acronym": "GH",
+    "definition": "Glacial Hammer",
+    "category": "Skill"
+  },
+  {
+    "acronym": "GMP",
+    "definition": "Greater Multiple Projectiles Support.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "GR",
+    "definition": "Ghost Reaver (Keystone). Life Leech is applied to Energy Shield.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "GS",
+    "definition": "Ground Slam",
+    "category": "Skill"
+  },
+  {
+    "acronym": "Gwennen",
+    "definition": "Expedition Gambler",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "H/O",
+    "definition": "Hideout",
+    "category": "General"
+  },
+  {
+    "acronym": "HC",
+    "definition": "Hardcore League. Permadeath mode.",
+    "category": "Content"
+  },
+  {
+    "acronym": "HFT",
+    "definition": "Holy Flame Totem",
+    "category": "Skill"
+  },
+  {
+    "acronym": "HH",
+    "definition": "Headhunter (Unique Belt).",
+    "category": "Items"
+  },
+  {
+    "acronym": "HoA",
+    "definition": "Herald of Ash or Herald of Agony.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "HoAg",
+    "definition": "Herald of Agony.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "HoI",
+    "definition": "Herald of Ice.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "HoP",
+    "definition": "Herald of Purity.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "HoT",
+    "definition": "Herald of Thunder.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "HoWA",
+    "definition": "Hand of Wisdom and Action",
+    "category": "Item"
+  },
+  {
+    "acronym": "HP",
+    "definition": "Hit Points (Life).",
+    "category": "Stats"
+  },
+  {
+    "acronym": "IB",
+    "definition": "Infernal Blow",
+    "category": "Skill"
+  },
+  {
+    "acronym": "IGN",
+    "definition": "In-Game Name. The name of the character someone is currently playing.",
+    "category": "General"
+  },
+  {
+    "acronym": "IIQ",
+    "definition": "Increased Item Quantity (often called Quant).",
+    "category": "Stats"
+  },
+  {
+    "acronym": "IIR",
+    "definition": "Increased Item Rarity (often called Rarity).",
+    "category": "Stats"
+  },
+  {
+    "acronym": "IL / iLvl",
+    "definition": "Item Level",
+    "category": "Stat"
+  },
+  {
+    "acronym": "Inquis",
+    "definition": "Inquisitor",
+    "category": "Class"
+  },
+  {
+    "acronym": "IR",
+    "definition": "Iron Reflexes (Keystone). Converts Evasion to Armour.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "Jew",
+    "definition": "Jeweller's Orb",
+    "category": "Currency"
+  },
+  {
+    "acronym": "Jun",
+    "definition": "Betrayal Master",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "KB",
+    "definition": "Kinetic Blast.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "LA",
+    "definition": "Lightning Arrow.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "LC",
+    "definition": "Lightning Conduit",
+    "category": "Skill"
+  },
+  {
+    "acronym": "LF",
+    "definition": "Looking For",
+    "category": "Trade"
+  },
+  {
+    "acronym": "LL",
+    "definition": "Low Life",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "LMP",
+    "definition": "Lesser Multiple Projectiles Support.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Login",
+    "definition": "Excitement / Good Drop",
+    "category": "Slang"
+  },
+  {
+    "acronym": "LS",
+    "definition": "Lightning Strike.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "MB",
+    "definition": "Mageblood (Unique Belt).",
+    "category": "Items"
+  },
+  {
+    "acronym": "MF",
+    "definition": "Magic Find. Building a character to maximize IIQ and IIR.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "Mir",
+    "definition": "Mirror of Kalandra",
+    "category": "Currency"
+  },
+  {
+    "acronym": "MoM",
+    "definition": "Mind Over Matter (Keystone). Damage is taken from Mana before Life.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "MS",
+    "definition": "Movement Speed.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "MTX",
+    "definition": "Microtransactions. Cosmetic items purchased from the store.",
+    "category": "General"
+  },
+  {
+    "acronym": "Multi",
+    "definition": "Crit Multiplier / Multistrike",
+    "category": "Stat/Support"
+  },
+  {
+    "acronym": "Necro",
+    "definition": "Necromancer",
+    "category": "Class"
+  },
+  {
+    "acronym": "Niko",
+    "definition": "Delve Master",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "Occ",
+    "definition": "Occultist",
+    "category": "Class"
+  },
+  {
+    "acronym": "OOS",
+    "definition": "Orb of Storms",
+    "category": "Skill"
+  },
+  {
+    "acronym": "OP",
+    "definition": "Overpowered",
+    "category": "Slang"
+  },
+  {
+    "acronym": "PA",
+    "definition": "Pain Attunement",
+    "category": "Keystone"
+  },
+  {
+    "acronym": "PB",
+    "definition": "Point Blank / Petrified Blood",
+    "category": "Key/Skill"
+  },
+  {
+    "acronym": "PBoD",
+    "definition": "Penance Brand of Dissipation (Transfigured Gem).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "PC",
+    "definition": "Poisonous Concoction (or Price Check, context dependent).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "PCoC",
+    "definition": "Power Charge On Critical Support.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "PConc",
+    "definition": "Poisonous Concoction",
+    "category": "Skill"
+  },
+  {
+    "acronym": "pDPS",
+    "definition": "Physical Damage Per Second (usually on weapons).",
+    "category": "Stats"
+  },
+  {
+    "acronym": "Pen",
+    "definition": "Penetration",
+    "category": "Stat"
+  },
+  {
+    "acronym": "PF",
+    "definition": "Pathfinder",
+    "category": "Class"
+  },
+  {
+    "acronym": "PK",
+    "definition": "Player Kill. Killing another player (usually in Cutthroat events or via Hall of Grandmasters).",
+    "category": "General"
+  },
+  {
+    "acronym": "PoB",
+    "definition": "Path of Building. Third-party software used to plan and calculate build stats.",
+    "category": "Tools"
+  },
+  {
+    "acronym": "Pop",
+    "definition": "Explode (Bleed/Occultist)",
+    "category": "Slang"
+  },
+  {
+    "acronym": "PS",
+    "definition": "Power Siphon",
+    "category": "Skill"
+  },
+  {
+    "acronym": "PT",
+    "definition": "Precise Technique",
+    "category": "Keystone"
+  },
+  {
+    "acronym": "Q20",
+    "definition": "20% Quality",
+    "category": "Item"
+  },
+  {
+    "acronym": "QotF",
+    "definition": "Queen of the Forest (Unique Body Armour).",
+    "category": "Items"
+  },
+  {
+    "acronym": "Quant",
+    "definition": "Item Quantity",
+    "category": "Stat"
+  },
+  {
+    "acronym": "Recomb",
+    "definition": "Recombinator",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "Res",
+    "definition": "Resistance (Fire, Cold, Lightning, Chaos).",
+    "category": "Stats"
+  },
+  {
+    "acronym": "RF",
+    "definition": "Righteous Fire.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "RIP",
+    "definition": "Rest In Peace. Used when a character dies, especially in Hardcore.",
+    "category": "General"
+  },
+  {
+    "acronym": "RMT",
+    "definition": "Real Money Trading. Buying in-game items with real money (bannable offense).",
+    "category": "General"
+  },
+  {
+    "acronym": "RNG",
+    "definition": "Random Number Generator",
+    "category": "General"
+  },
+  {
+    "acronym": "RoA",
+    "definition": "Rise of the Phoenix (Unique Shield) - rare, usually refers to skill Rain of Arrows.",
+    "category": "Items"
+  },
+  {
+    "acronym": "Rog",
+    "definition": "Expedition Crafter",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "Rota",
+    "definition": "Rotation (Sharing maps)",
+    "category": "Social"
+  },
+  {
+    "acronym": "RT",
+    "definition": "Resolute Technique (Keystone). Hits cannot be evaded, but never deal Critical Strikes.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "Sabo",
+    "definition": "Saboteur",
+    "category": "Class"
+  },
+  {
+    "acronym": "SA",
+    "definition": "Scourge Arrow.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "SC",
+    "definition": "Softcore League. Standard mode where you respawn upon death.",
+    "category": "Content"
+  },
+  {
+    "acronym": "Scour",
+    "definition": "Orb of Scouring",
+    "category": "Currency"
+  },
+  {
+    "acronym": "Shavs",
+    "definition": "Shavronne's Wrappings (Unique Body Armour).",
+    "category": "Items"
+  },
+  {
+    "acronym": "Simu",
+    "definition": "Simulacrum. An endgame wave-based encounter from Delirium.",
+    "category": "Content"
+  },
+  {
+    "acronym": "Slam",
+    "definition": "Exalt Craft / Slam Skill",
+    "category": "Craft/Skill"
+  },
+  {
+    "acronym": "Snipe",
+    "definition": "Trade Sniping / Snipe Skill",
+    "category": "Trade/Skill"
+  },
+  {
+    "acronym": "SQ",
+    "definition": "The Squire",
+    "category": "Item"
+  },
+  {
+    "acronym": "SR",
+    "definition": "Scorching Ray.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "SRS",
+    "definition": "Summon Raging Spirits.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "SSF",
+    "definition": "Solo Self-Found. A league mode with no trading or partying.",
+    "category": "Content"
+  },
+  {
+    "acronym": "SST",
+    "definition": "Spectral Shield Throw",
+    "category": "Skill"
+  },
+  {
+    "acronym": "ST",
+    "definition": "Spectral Throw.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "T1",
+    "definition": "Tier 1 (Best Roll)",
+    "category": "Crafting"
+  },
+  {
+    "acronym": "T16",
+    "definition": "Tier 16 Map. The highest tier of standard maps on the Atlas.",
+    "category": "Content"
+  },
+  {
+    "acronym": "T17",
+    "definition": "Tier 17 Map. Extremely difficult endgame maps bridging the gap to Uber Bosses.",
+    "category": "Content"
+  },
+  {
+    "acronym": "T4T",
+    "definition": "Thanks for Trade",
+    "category": "Trade"
+  },
+  {
+    "acronym": "TFT",
+    "definition": "The Forbidden Trove",
+    "category": "Community"
+  },
+  {
+    "acronym": "ToH",
+    "definition": "Taste of Hate (Unique Flask).",
+    "category": "Items"
+  },
+  {
+    "acronym": "TP",
+    "definition": "Town Portal",
+    "category": "General"
+  },
+  {
+    "acronym": "TR",
+    "definition": "Toxic Rain.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "TS",
+    "definition": "Tornado Shot.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Tuyen",
+    "definition": "Expedition Haggler",
+    "category": "Mechanic"
+  },
+  {
+    "acronym": "UE",
+    "definition": "Uber Elder",
+    "category": "Boss"
+  },
+  {
+    "acronym": "UUE",
+    "definition": "Uber Uber Elder",
+    "category": "Boss"
+  },
+  {
+    "acronym": "Vaal",
+    "definition": "Vaal Orb / Skill",
+    "category": "Currency"
+  },
+  {
+    "acronym": "VLS",
+    "definition": "Vaal Lightning Strike",
+    "category": "Skill"
+  },
+  {
+    "acronym": "VMS",
+    "definition": "Vaal Molten Shell.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "VP",
+    "definition": "Vaal Pact (Keystone). Life Leech is instant/doubled but no Life Regeneration.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "WED",
+    "definition": "Weapon Elemental Damage (now Elemental Damage with Attacks Support).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Woke",
+    "definition": "Awakened Gem / Orb",
+    "category": "Item"
+  },
+  {
+    "acronym": "WoC",
+    "definition": "Wave of Conviction",
+    "category": "Skill"
+  },
+  {
+    "acronym": "WTB",
+    "definition": "Want To Buy. Looking to purchase an item.",
+    "category": "General"
+  },
+  {
+    "acronym": "WTS",
+    "definition": "Want To Sell. Looking to sell an item.",
+    "category": "General"
+  },
+  {
+    "acronym": "WTT",
+    "definition": "Want To Trade. Looking to trade one item for another.",
+    "category": "General"
+  },
+  {
+    "acronym": "zDPS",
+    "definition": "Zero DPS",
+    "category": "Build"
+  },
+  {
+    "acronym": "zHP",
+    "definition": "Zero HP. A build with almost no defensive investment, usually for deep Delve.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "ZO",
+    "definition": "Zealot's Oath (Keystone). Life Regeneration applies to Energy Shield.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "A1",
+    "definition": "Act 1. Often refers to the town Lioneye's Watch.",
+    "category": "General"
+  },
+  {
+    "acronym": "Alt ailments",
+    "definition": "Alternative elemental ailments: Specifically brittle, scorch and sap",
+    "category": "General"
+  },
+  {
+    "acronym": "Ammy",
+    "definition": "Amulet",
+    "category": "General"
+  },
+  {
+    "acronym": "Bench",
+    "definition": "Non-Ruthless leagues",
+    "category": "General"
+  },
+  {
+    "acronym": "b/o",
+    "definition": "Buyout (seller's asking price)",
+    "category": "General"
+  },
+  {
+    "acronym": "BR",
+    "definition": "Blood Rage",
+    "category": "General"
+  },
+  {
+    "acronym": "CIP",
+    "definition": "Cold Iron Point",
+    "category": "General"
+  },
+  {
+    "acronym": "cluster",
+    "definition": "Cluster jewels",
+    "category": "General"
+  },
+  {
+    "acronym": "c/o",
+    "definition": "Current Offer",
+    "category": "General"
+  },
+  {
+    "acronym": "CoE",
+    "definition": "Crown of Eyes",
+    "category": "General"
+  },
+  {
+    "acronym": "CoMK",
+    "definition": "Cast on Melee Kill Support",
+    "category": "Support"
+  },
+  {
+    "acronym": "Disc",
+    "definition": "Discipline",
+    "category": "General"
+  },
+  {
+    "acronym": "div",
+    "definition": "Divine Orb. The standard currency for high-value trades.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "div card",
+    "definition": "Divination card",
+    "category": "General"
+  },
+  {
+    "acronym": "Dom",
+    "definition": "Dominus",
+    "category": "General"
+  },
+  {
+    "acronym": "EDwA",
+    "definition": "Elemental Damage with Attacks Support or similarly worded modifiers to damage",
+    "category": "Support"
+  },
+  {
+    "acronym": "Ele Weak",
+    "definition": "Elemental Weakness",
+    "category": "General"
+  },
+  {
+    "acronym": "F",
+    "definition": "Press F to Pay Respects. See RIP.",
+    "category": "General"
+  },
+  {
+    "acronym": "FFA",
+    "definition": "Free For All item allocation",
+    "category": "Item"
+  },
+  {
+    "acronym": "Flat phys",
+    "definition": "Added physical damage on gear (e.g. Adds 7-19 Physical Damage)",
+    "category": "General"
+  },
+  {
+    "acronym": "IL",
+    "definition": "Inspired Learning (Unique Jewel).",
+    "category": "Items"
+  },
+  {
+    "acronym": "Inc AoE",
+    "definition": "Increased Area of Effect Support",
+    "category": "Support"
+  },
+  {
+    "acronym": "IAS",
+    "definition": "Increased attack speed",
+    "category": "General"
+  },
+  {
+    "acronym": "IC",
+    "definition": "Immortal Call.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "Inc Dur",
+    "definition": "More Duration Support",
+    "category": "Support"
+  },
+  {
+    "acronym": "IPD",
+    "definition": "Increased physical damage",
+    "category": "General"
+  },
+  {
+    "acronym": "Juice",
+    "definition": "Harvest currencies such as Primal Crystallised Lifeforce (\"Blue Juice\"). Could also refer to making content more difficult and rewarding (\"juicing a map\").",
+    "category": "General"
+  },
+  {
+    "acronym": "Krangled",
+    "definition": "Commonly refers to various ways items can become corrupted, including double corrupted and scourged. The term originates from a meme posted on the Path of Exile subreddit.[2]",
+    "category": "General"
+  },
+  {
+    "acronym": "LLD",
+    "definition": "Low Level Dueling (level 28 or lower). Also used to refer to low level PvP events in general.",
+    "category": "General"
+  },
+  {
+    "acronym": "MI",
+    "definition": "Minion Instability",
+    "category": "General"
+  },
+  {
+    "acronym": "Mods",
+    "definition": "Modifiers",
+    "category": "General"
+  },
+  {
+    "acronym": "NA",
+    "definition": "Necromantic Aegis",
+    "category": "General"
+  },
+  {
+    "acronym": "OOM",
+    "definition": "Out of Mana",
+    "category": "General"
+  },
+  {
+    "acronym": "OoS",
+    "definition": "Orb of Storms",
+    "category": "Currency"
+  },
+  {
+    "acronym": "Phys",
+    "definition": "Physical damage",
+    "category": "General"
+  },
+  {
+    "acronym": "PoE",
+    "definition": "Path of Exile",
+    "category": "General"
+  },
+  {
+    "acronym": "PoF",
+    "definition": "Purity of Fire",
+    "category": "General"
+  },
+  {
+    "acronym": "PoI",
+    "definition": "Purity of Ice",
+    "category": "General"
+  },
+  {
+    "acronym": "PoL",
+    "definition": "Purity of Lightning",
+    "category": "General"
+  },
+  {
+    "acronym": "Prolif",
+    "definition": "Elemental Proliferation Support or proliferation in general",
+    "category": "Support"
+  },
+  {
+    "acronym": "Quicksilver",
+    "definition": "Quicksilver Flask",
+    "category": "General"
+  },
+  {
+    "acronym": "SoS",
+    "definition": "Secrets of Suffering",
+    "category": "General"
+  },
+  {
+    "acronym": "Spork",
+    "definition": "Spark with Fork Support",
+    "category": "General"
+  },
+  {
+    "acronym": "STD",
+    "definition": "Standard permanent league",
+    "category": "General"
+  },
+  {
+    "acronym": "Thread",
+    "definition": "Thread of Hope",
+    "category": "General"
+  },
+  {
+    "acronym": "Valdo",
+    "definition": "Valdo's Puzzle Box, or a map obtained from one (\"a Valdo map\")",
+    "category": "General"
+  },
+  {
+    "acronym": "WB",
+    "definition": "Whirling Blades",
+    "category": "General"
+  },
+  {
+    "acronym": "WP",
+    "definition": "Waypoint",
+    "category": "General"
+  },
+  {
+    "acronym": "L/Q gem",
+    "definition": "Q : quality gem (# quality), L : level gem (# level) e.g.: 21/23 gem = level 21, 23 quality gem.",
+    "category": "General"
+  },
+  {
+    "acronym": "arm",
+    "definition": "Armour",
+    "category": "General"
+  },
+  {
+    "acronym": "Brick",
+    "definition": "Using a Vaal Orb or other crafting method on an item and receiving an outcome that greatly decreases its value",
+    "category": "Currency"
+  },
+  {
+    "acronym": "bricked",
+    "definition": "Using a Vaal Orb or other crafting method on an item and receiving an outcome that greatly decreases its value",
+    "category": "Currency"
+  },
+  {
+    "acronym": "c",
+    "definition": "Chaos Orb. The standard currency for small to medium trades.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "chaos",
+    "definition": "Chaos Orb.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "CotB",
+    "definition": "Call of the Brotherhood",
+    "category": "General"
+  },
+  {
+    "acronym": "cotb",
+    "definition": "Call of the Brotherhood",
+    "category": "General"
+  },
+  {
+    "acronym": "Det",
+    "definition": "Determination",
+    "category": "General"
+  },
+  {
+    "acronym": "Determ",
+    "definition": "Determination",
+    "category": "General"
+  },
+  {
+    "acronym": "Deeps",
+    "definition": "Damage per second",
+    "category": "General"
+  },
+  {
+    "acronym": "Eva",
+    "definition": "Evasion",
+    "category": "General"
+  },
+  {
+    "acronym": "EV",
+    "definition": "Evasion Rating.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "exalted",
+    "definition": "Exalted Orb",
+    "category": "Currency"
+  },
+  {
+    "acronym": "Fus",
+    "definition": "Orb of Fusing",
+    "category": "Currency"
+  },
+  {
+    "acronym": "HO",
+    "definition": "Hideout",
+    "category": "General"
+  },
+  {
+    "acronym": "h/o",
+    "definition": "Hideout",
+    "category": "General"
+  },
+  {
+    "acronym": "quant",
+    "definition": "Increased Item quantity",
+    "category": "General"
+  },
+  {
+    "acronym": "rarity",
+    "definition": "Increased Item rarity",
+    "category": "General"
+  },
+  {
+    "acronym": "ilvl",
+    "definition": "Item level",
+    "category": "Item"
+  },
+  {
+    "acronym": "micro",
+    "definition": "Microtransaction",
+    "category": "General"
+  },
+  {
+    "acronym": "PotG",
+    "definition": "Pillar of the Caged God",
+    "category": "General"
+  },
+  {
+    "acronym": "PotCG",
+    "definition": "Pillar of the Caged God",
+    "category": "General"
+  },
+  {
+    "acronym": "RMR",
+    "definition": "Reduced Mana Reserved or Reservation Efficiency - modifiers to reservation of skills",
+    "category": "General"
+  },
+  {
+    "acronym": "RE",
+    "definition": "Reduced Mana Reserved or Reservation Efficiency - modifiers to reservation of skills",
+    "category": "General"
+  },
+  {
+    "acronym": "res eff",
+    "definition": "Reduced Mana Reserved or Reservation Efficiency - modifiers to reservation of skills",
+    "category": "General"
+  },
+  {
+    "acronym": "TC",
+    "definition": "Temporal Chains",
+    "category": "General"
+  },
+  {
+    "acronym": "Temp Chains",
+    "definition": "Temporal Chains",
+    "category": "General"
+  },
+  {
+    "acronym": "US",
+    "definition": "Unwavering Stance (Keystone). Cannot be Stunned, Cannot Evade.",
+    "category": "Passives"
+  },
+  {
+    "acronym": "Unwavering",
+    "definition": "Unwavering Stance",
+    "category": "General"
+  },
+  {
+    "acronym": "VC",
+    "definition": "Versatile Combatant (formerly an Ascendancy Passive of the Gladiator Ascendancy)",
+    "category": "General"
+  },
+  {
+    "acronym": "Glad Block",
+    "definition": "Versatile Combatant (formerly an Ascendancy Passive of the Gladiator Ascendancy)",
+    "category": "General"
+  },
+  {
+    "acronym": "Any combination of RGB",
+    "definition": "The socket colors (Red, Green, Blue) on an item, typically also denoting the number of linked sockets. Numbers may preface colours in combination to determine total colours on an item - e.g. 4 linked item with 3 Red and 1 Blue sockets = 3R1B",
+    "category": "General"
+  },
+  {
+    "acronym": "G",
+    "definition": "The socket colors (Red, Green, Blue) on an item, typically also denoting the number of linked sockets. Numbers may preface colours in combination to determine total colours on an item - e.g. 4 linked item with 3 Red and 1 Blue sockets = 3R1B",
+    "category": "General"
+  },
+  {
+    "acronym": "B",
+    "definition": "The socket colors (Red, Green, Blue) on an item, typically also denoting the number of linked sockets. Numbers may preface colours in combination to determine total colours on an item - e.g. 4 linked item with 3 Red and 1 Blue sockets = 3R1B",
+    "category": "General"
+  },
+  {
+    "acronym": "4L",
+    "definition": "Number of item socket links",
+    "category": "General"
+  },
+  {
+    "acronym": "5L",
+    "definition": "Number of item socket links",
+    "category": "General"
+  },
+  {
+    "acronym": "6L",
+    "definition": "Number of item socket links",
+    "category": "General"
+  },
+  {
+    "acronym": "4S",
+    "definition": "Number of item sockets",
+    "category": "Item"
+  },
+  {
+    "acronym": "5S",
+    "definition": "Number of item sockets",
+    "category": "Item"
+  },
+  {
+    "acronym": "6S",
+    "definition": "Number of item sockets",
+    "category": "Item"
+  },
+  {
+    "acronym": "A2",
+    "definition": "Act 2. Often refers to the town The Forest Encampment.",
+    "category": "General"
+  },
+  {
+    "acronym": "A3",
+    "definition": "Act 3. Often refers to the town The Sarn Encampment.",
+    "category": "General"
+  },
+  {
+    "acronym": "A4",
+    "definition": "Act 4. Often refers to the town Highgate.",
+    "category": "General"
+  },
+  {
+    "acronym": "A5",
+    "definition": "Act 5. Often refers to the town Overseer's Tower.",
+    "category": "General"
+  },
+  {
+    "acronym": "A6",
+    "definition": "Act 6. Often refers to the town Lioneye's Watch (Part 2).",
+    "category": "General"
+  },
+  {
+    "acronym": "A7",
+    "definition": "Act 7. Often refers to the town The Bridge Encampment.",
+    "category": "General"
+  },
+  {
+    "acronym": "A8",
+    "definition": "Act 8. Often refers to the town The Sarn Encampment (Part 2).",
+    "category": "General"
+  },
+  {
+    "acronym": "A9",
+    "definition": "Act 9. Often refers to the town Highgate (Part 2).",
+    "category": "General"
+  },
+  {
+    "acronym": "A10",
+    "definition": "Act 10. Often refers to the town Oriath Docks.",
+    "category": "General"
+  },
+  {
+    "acronym": "LFG",
+    "definition": "Looking For Group. A player seeking a party.",
+    "category": "General"
+  },
+  {
+    "acronym": "LFM",
+    "definition": "Looking For More/Members. A party seeking more players.",
+    "category": "General"
+  },
+  {
+    "acronym": "PM",
+    "definition": "Private Message. Whispering a player directly.",
+    "category": "General"
+  },
+  {
+    "acronym": "alt",
+    "definition": "Orb of Alteration.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "aug",
+    "definition": "Orb of Augmentation.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "alch",
+    "definition": "Orb of Alchemy.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "bauble",
+    "definition": "Glassblower's Bauble.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "bless",
+    "definition": "Blessed Orb.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "chrom",
+    "definition": "Chromatic Orb.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "chance",
+    "definition": "Orb of Chance.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "d",
+    "definition": "Divine Orb.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "ex",
+    "definition": "Exalted Orb. Formerly the high-value standard, now used for crafting.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "fuse",
+    "definition": "Orb of Fusing.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "gcp",
+    "definition": "Gemcutter's Prism.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "jew",
+    "definition": "Jeweller's Orb.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "mirr",
+    "definition": "Mirror of Kalandra. The most valuable currency item.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "regal",
+    "definition": "Regal Orb.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "regret",
+    "definition": "Orb of Regret.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "scour",
+    "definition": "Orb of Scouring.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "trans",
+    "definition": "Orb of Transmutation.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "vaal",
+    "definition": "Vaal Orb.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "whet",
+    "definition": "Blacksmith's Whetstone.",
+    "category": "Currency"
+  },
+  {
+    "acronym": "AL",
+    "definition": "Arcane Link (or Awakener Level in Atlas context).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "BLoS",
+    "definition": "Ball Lightning of Static (Transfigured Gem).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "FS",
+    "definition": "Flicker Strike.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "KBC",
+    "definition": "Kinetic Blast of Clustering (Transfigured Gem).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "KBoC",
+    "definition": "Kinetic Blast of Clustering (Transfigured Gem).",
+    "category": "Skills"
+  },
+  {
+    "acronym": "VD",
+    "definition": "Volatile Dead.",
+    "category": "Skills"
+  },
+  {
+    "acronym": "CJ",
+    "definition": "Cospri's Jewelled Foil (Cospri's Malice).",
+    "category": "Items"
+  },
+  {
+    "acronym": "Kaom's",
+    "definition": "Kaom's Heart (Unique Body Armour).",
+    "category": "Items"
+  },
+  {
+    "acronym": "FF",
+    "definition": "Forbidden Flesh / Forbidden Flame (Unique Jewels).",
+    "category": "Items"
+  },
+  {
+    "acronym": "IE",
+    "definition": "Impossible Escape (Unique Jewel).",
+    "category": "Items"
+  },
+  {
+    "acronym": "Squire",
+    "definition": "The Squire (Unique Shield).",
+    "category": "Items"
+  },
+  {
+    "acronym": "Crit",
+    "definition": "Critical Strike Chance / Multiplier.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "EHP",
+    "definition": "Effective Hit Points. A measure of how much raw damage a character can take.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "zdps",
+    "definition": "Zero DPS. A support build that deals no damage but buffs allies, or a meme insult for a weak build.",
+    "category": "Stats"
+  },
+  {
+    "acronym": "5-way",
+    "definition": "Domain of Timeless Conflict with 5 emblems. A method for gaining XP quickly.",
+    "category": "Content"
+  },
+  {
+    "acronym": "Ruthless",
+    "definition": "A game mode with extreme item scarcity.",
+    "category": "Content"
+  },
+  {
+    "acronym": "Lab",
+    "definition": "The Lord's Labyrinth. Run to ascend your character.",
+    "category": "Content"
+  },
+  {
+    "acronym": "Uber Lab",
+    "definition": "The Eternal Labyrinth (Tier 4).",
+    "category": "Content"
+  },
+  {
+    "acronym": "8-mod",
+    "definition": "A corrupted map with 8 modifiers, offering high quantity and pack size.",
+    "category": "Content"
+  }
+]

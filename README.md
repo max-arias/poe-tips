@@ -1,67 +1,60 @@
-# PoE Tips
+# Nuxt Starter Template
 
-A community-driven repository of short-form Path of Exile tips, built with performance and usability in mind.
+[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
 
-## Tech Stack
+Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
 
-- **Frontend**: [Astro](https://astro.build/)
-- **Interactivity**: [SolidJS](https://www.solidjs.com/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Search**: [Fuse.js](https://fusejs.io/)
-- **Backend**: [PocketBase](https://pocketbase.io/)
-- **Runtime/Package Manager**: [Bun](https://bun.sh/)
+- [Live demo](https://starter-template.nuxt.dev/)
+- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
 
-## Prerequisites
+<a href="https://starter-template.nuxt.dev/" target="_blank">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
+    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
+  </picture>
+</a>
 
-2.  **PocketBase**:
-    - Download the latest release (v0.25+) from [pocketbase.io](https://pocketbase.io/docs/).
-    - Place the `pocketbase` executable in a `pocketbase` directory in the project root (or anywhere you prefer, but update paths accordingly).
-    - **Note**: The project assumes PocketBase is running at `http://127.0.0.1:8090`.
+> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
 
-## Local Development
+## Quick Start
 
-1.  **Install Dependencies**:
-    ```bash
-    bun install
-    ```
+```bash [Terminal]
+npm create nuxt@latest -- -t github:nuxt-ui-templates/starter
+```
 
-2.  **Environment Setup**:
-    Copy `.env.example` to `.env` and set your PocketBase admin credentials:
-    ```bash
-    cp .env.example .env
-    ```
-    Edit `.env` with your desired credentials
+## Deploy your own
 
-3.  **Start PocketBase**:
-    Run the setup script to download and extract PocketBase:
-    ```bash
-    bun run scripts/setup-pb.ts
-    ```
-    Then start the server:
-    ```bash
-    ./pocketbase/pocketbase serve
-    ```
-    Access the Admin UI at `http://127.0.0.1:8090/_/`.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
 
-4.  **Initialize Schema**:
-    Run the migrations to create collections and rules.
-    ```bash
-    ./pocketbase/pocketbase migrate up
-    ```
+## Setup
 
-5.  **Seed Data**:
-    Populate the database with sample tips.
-    ```bash
-    bun run scripts/seed-pb.ts
-    ```
+Make sure to install the dependencies:
 
-6.  **Start Astro**:
-    ```bash
-    bun run dev
-    ```
+```bash
+pnpm install
+```
 
-## Utility Scripts
+## Development Server
 
-*   `scripts/seed-pb.ts`: Seeds the database with data from `src/data/tips.json`.
-*   `scripts/reset-pb.ts`: **WARNING** Deletes all collections and data. Use with caution.
-*   `scripts/inspect-tips.ts`: Debugging script to inspect `tips` collection and test fetching.
+Start the development server on `http://localhost:3000`:
+
+```bash
+pnpm dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+pnpm build
+```
+
+Locally preview production build:
+
+```bash
+pnpm preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

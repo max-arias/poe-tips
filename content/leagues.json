@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Standard",
+    "slug": "standard",
+    "version": "Core",
+    "is_active": true,
+    "start_date": "",
+    "end_date": ""
+  },
+  {
+    "name": "Settlers of Kalguur",
+    "slug": "settlers",
+    "version": "3.25",
+    "is_active": false,
+    "start_date": "",
+    "end_date": ""
+  },
+  {
+    "name": "Mercenaries of Trarthus",
+    "slug": "mercenaries",
+    "version": "3.26",
+    "is_active": false,
+    "start_date": "",
+    "end_date": ""
+  },
+  {
+    "name": "Keepers of the Flame",
+    "slug": "keepers",
+    "version": "3.27",
+    "is_active": true,
+    "start_date": "",
+    "end_date": ""
+  }
+]

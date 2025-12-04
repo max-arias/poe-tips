@@ -24,11 +24,11 @@ useSeoMeta({
 
 <template>
   <UApp>
-    <div class="min-h-screen flex flex-col">
-      <header class="border-b border-gray-200 dark:border-gray-800 bg-white/75 dark:bg-gray-900/75 backdrop-blur sticky top-0 z-50">
+    <div class="min-h-screen flex flex-col bg-stone-950 text-stone-200 font-sans selection:bg-primary-500/30">
+      <header class="border-b border-primary-900/50 bg-stone-950/95 backdrop-blur sticky top-0 z-50 shadow-lg shadow-black/20">
         <UContainer class="h-16 flex items-center justify-between">
-          <NuxtLink to="/" class="font-bold text-xl flex items-center gap-2">
-            <UIcon name="i-heroicons-light-bulb" class="w-6 h-6 text-primary-500" />
+          <NuxtLink to="/" class="font-serif font-bold text-xl flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors">
+            <UIcon name="i-heroicons-light-bulb" class="w-6 h-6" />
             PoE Tips
           </NuxtLink>
 
@@ -39,21 +39,26 @@ useSeoMeta({
               target="_blank"
               icon="i-simple-icons-github"
               aria-label="GitHub"
-              color="gray"
+              color="neutral"
               variant="ghost"
+              class="hover:text-primary-400"
             />
           </div>
         </UContainer>
       </header>
 
-      <main class="flex-1">
-        <NuxtPage />
+      <main class="flex-1 relative">
+        <!-- Background texture/gradient overlay -->
+        <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-900/10 via-stone-950/0 to-stone-950/0 z-0"></div>
+        <div class="relative z-10">
+          <NuxtPage />
+        </div>
       </main>
 
-      <footer class="border-t border-gray-200 dark:border-gray-800 py-6">
+      <footer class="border-t border-primary-900/30 py-8 bg-stone-950">
         <UContainer>
-          <p class="text-sm text-gray-500 text-center">
-            © {{ new Date().getFullYear() }} PoE Tips
+          <p class="text-sm text-stone-500 text-center font-serif">
+            © {{ new Date().getFullYear() }} PoE Tips • Community Driven
           </p>
         </UContainer>
       </footer>

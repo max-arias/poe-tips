@@ -3,7 +3,7 @@ const props = defineProps<{
   tip: any
 }>()
 
-const isOpen = ref(false)
+
 
 const statusColor = computed(() => {
   switch (props.tip.status) {
@@ -16,52 +16,42 @@ const statusColor = computed(() => {
 </script>
 
 <template>
-  <div class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden bg-white dark:bg-gray-900 transition-all hover:border-primary-500/50">
-    <div 
-      class="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
-      @click="isOpen = !isOpen"
-    >
-      <div class="flex items-center gap-3 flex-1 min-w-0">
-        <UIcon 
-          :name="isOpen ? 'i-heroicons-chevron-down' : 'i-heroicons-chevron-right'" 
-          class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200" 
-        />
-        
-        <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-2 flex-wrap">
-            <h3 class="font-bold text-lg truncate">{{ tip.title }}</h3>
-            <UBadge :color="statusColor" variant="subtle" size="xs" class="flex-shrink-0">{{ tip.status }}</UBadge>
+  <div class="group border border-stone-800 bg-stone-900/50 rounded-lg overflow-hidden transition-all duration-300 hover:border-primary-500/50 hover:shadow-[0_0_15px_rgba(var(--color-primary-500),0.1)] hover:bg-stone-900/80 mb-8">
+    <div class="p-6">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 flex-wrap mb-2">
+              <h3 class="font-serif font-bold text-2xl text-primary-100">{{ tip.title }}</h3>
+              <UBadge :color="statusColor" variant="subtle" size="xs" class="flex-shrink-0 font-mono tracking-wider uppercase text-[10px]">{{ tip.status }}</UBadge>
+            </div>
           </div>
-          <p v-if="!isOpen" class="text-sm text-gray-500 dark:text-gray-400 truncate mt-0.5">
+          
+          <div class="hidden md:flex gap-1 flex-shrink-0">
+             <UBadge v-for="tag in tip.tags" :key="tag" color="neutral" variant="outline" size="xs" class="bg-stone-950/50 border-stone-800 text-stone-400">
+              {{ tag }}
+            </UBadge>
+          </div>
+        </div>
+
+        <div class="prose prose-invert max-w-none prose-p:text-stone-300 prose-headings:font-serif prose-headings:text-primary-100 prose-a:text-primary-400 hover:prose-a:text-primary-300 prose-strong:text-primary-200">
+          <p class="lead text-primary-200/80 not-prose mb-6 border-l-2 border-primary-500/50 pl-4 italic font-serif text-lg">
             {{ tip.description }}
           </p>
+          <ContentRenderer :value="tip" />
         </div>
-      </div>
-      
-      <div class="hidden md:flex gap-1 ml-4 flex-shrink-0">
-         <UBadge v-for="tag in tip.tags.slice(0, 3)" :key="tag" color="neutral" variant="soft" size="xs">
-          {{ tag }}
-        </UBadge>
-        <span v-if="tip.tags.length > 3" class="text-xs text-gray-400 flex items-center px-1">+{{ tip.tags.length - 3 }}</span>
-      </div>
-    </div>
-
-    <div v-if="isOpen" class="border-t border-gray-200 dark:border-gray-800 p-6 bg-gray-50/30 dark:bg-gray-900/30">
-      <div class="prose dark:prose-invert max-w-none mb-6">
-        <p class="lead text-gray-600 dark:text-gray-300 not-prose mb-6 border-l-4 border-primary-500 pl-4 italic">
-          {{ tip.description }}
-        </p>
-        <ContentRenderer :value="tip" />
-      </div>
-      
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-gray-200 dark:border-gray-800">
-        <div class="flex flex-wrap gap-2">
-           <UBadge v-for="tag in tip.tags" :key="tag" color="neutral" variant="soft">
-            {{ tag }}
-          </UBadge>
-        </div>
-        <div class="text-xs text-gray-400 font-mono">
-          By {{ tip.author }} • Patch {{ tip.last_verified_patch }}
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-stone-800/50 mt-4">
+          <div class="flex md:hidden flex-wrap gap-2">
+             <UBadge v-for="tag in tip.tags" :key="tag" color="neutral" variant="outline" class="bg-stone-950/30 border-stone-800 hover:border-primary-500/30 transition-colors cursor-default">
+              {{ tag }}
+            </UBadge>
+          </div>
+          <div class="text-xs text-stone-600 font-mono flex items-center gap-2 ml-auto">
+            <UIcon name="i-heroicons-user" class="w-3 h-3" /> {{ tip.author }} 
+            <span class="text-stone-800">|</span>
+            <UIcon name="i-heroicons-tag" class="w-3 h-3" /> Patch {{ tip.last_verified_patch }}
+          </div>
         </div>
       </div>
     </div>

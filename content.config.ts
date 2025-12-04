@@ -37,6 +37,20 @@ export default defineContentConfig({
                 definition: z.string(),
                 category: z.string().optional()
             }))
+        }),
+        tools: defineCollection({
+            type: 'data',
+            source: 'tools.json',
+            schema: z.array(z.object({
+                category: z.string(),
+                section: z.string(),
+                name: z.string(),
+                icon: z.string().optional(),
+                tooltip: z.string().optional(),
+                url: z.string(),
+                id: z.string(),
+                style: z.string().optional()
+            }))
         })
     }
 })

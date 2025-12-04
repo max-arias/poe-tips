@@ -32,6 +32,12 @@ useSeoMeta({
             PoE Tips
           </NuxtLink>
 
+          <div class="flex items-center gap-4">
+            <NuxtLink to="/tools" class="text-sm font-medium text-stone-400 hover:text-primary-400 transition-colors">
+              Tools
+            </NuxtLink>
+          </div>
+
           <div class="flex items-center gap-2">
             <UColorModeButton />
             <UButton

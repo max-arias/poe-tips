@@ -1,0 +1,1372 @@
+[
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "Path of Exile 2",
+        "icon": "poe2.png",
+        "tooltip": "Path of Exile 2 Official Web",
+        "url": "https://pathofexile2.com",
+        "id": "poe2-official-web",
+        "style": "button"
+    },
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "PoE2DB",
+        "icon": "poe2db.ico",
+        "tooltip": "PoE2DB",
+        "url": "https://poe2db.tw",
+        "id": "poe2-db",
+        "style": "button"
+    },
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "PoE2 Wiki",
+        "icon": "poe2wiki.ico",
+        "tooltip": "PoE2 Wiki",
+        "url": "https://www.poe2wiki.net/wiki/Path_of_Exile_2_Wiki",
+        "id": "poe2-wiki",
+        "style": "button"
+    },
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "PoE2 Build Planner",
+        "icon": "mobalitics.webp",
+        "tooltip": "PoE2 Build Planner",
+        "url": "https://mobalytics.gg/poe-2/planner/builds",
+        "id": "poe2-mobalitics-build-planner",
+        "style": "button"
+    },
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "PoE2 Skills",
+        "icon": "poe2-skills.ico",
+        "tooltip": "PoE2 Skills",
+        "url": "https://poe2skills.com",
+        "id": "poe2-skills",
+        "style": "button"
+    },
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "PoE2 Filter",
+        "icon": "poe2filter.com.png",
+        "tooltip": "Filter generator for PoE 2",
+        "url": "https://poe2filter.com",
+        "id": "poe2-poe2-filter",
+        "style": "button"
+    },
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "Path of Building 2",
+        "icon": "pathofbuilding2.png",
+        "tooltip": "Path of Building for PoE2",
+        "url": "https://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2",
+        "id": "poe2-building-community-2",
+        "style": "button"
+    },
+    {
+        "category": "poe2",
+        "section": "poe2-ea",
+        "name": "MirrorMarket",
+        "icon": "mirrormarket.org.png",
+        "tooltip": "PoE2 market analysis and trading",
+        "url": "https://mirrormarket.org",
+        "id": "poe2-mirrormarket",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Currency",
+        "icon": "poe-ninja-currency.png",
+        "tooltip": "Currency",
+        "url": "https://poe.ninja/challenge/currency",
+        "id": "poe-ninja-currency",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Fragments",
+        "icon": "poe-ninja-fragments.png",
+        "tooltip": "Fragments",
+        "url": "https://poe.ninja/challenge/fragments",
+        "id": "poe-ninja-fragments",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Divination Cards",
+        "icon": "poe-ninja-divination-cards.png",
+        "tooltip": "Divination Cards",
+        "url": "https://poe.ninja/challenge/divination-cards",
+        "id": "poe-ninja-divination-cards",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Tattoos",
+        "icon": "poe-ninja-tattoos.png",
+        "tooltip": "Tattoos",
+        "url": "https://poe.ninja/challenge/tattoos",
+        "id": "poe-ninja-tattoos",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Omens",
+        "icon": "poe-ninja-omens.png",
+        "tooltip": "Omens",
+        "url": "https://poe.ninja/challenge/omens",
+        "id": "poe-ninja-omens",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Artifacts",
+        "icon": "poe-ninja-artifacts.png",
+        "tooltip": "Artifacts",
+        "url": "https://poe.ninja/challenge/artifacts",
+        "id": "poe-ninja-artifacts",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Oils",
+        "icon": "poe-ninja-oils.png",
+        "tooltip": "Oils",
+        "url": "https://poe.ninja/challenge/oils",
+        "id": "poe-ninja-oils",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Incubators",
+        "icon": "poe-ninja-incubators.png",
+        "tooltip": "Incubators",
+        "url": "https://poe.ninja/challenge/incubators",
+        "id": "poe-ninja-incubators",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Unique Weapons",
+        "icon": "poe-ninja-unique-weapons.png",
+        "tooltip": "Unique Weapons",
+        "url": "https://poe.ninja/challenge/unique-weapons",
+        "id": "poe-ninja-unique-weapons",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Unique Armours",
+        "icon": "poe-ninja-unique-armours.png",
+        "tooltip": "Unique Armours",
+        "url": "https://poe.ninja/challenge/unique-armours",
+        "id": "poe-ninja-unique-armours",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Unique Accessories",
+        "icon": "poe-ninja-unique-accessories.png",
+        "tooltip": "Unique Accessories",
+        "url": "https://poe.ninja/challenge/unique-accessories",
+        "id": "poe-ninja-unique-accessories",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Unique Flasks",
+        "icon": "poe-ninja-unique-flasks.png",
+        "tooltip": "Unique Flasks",
+        "url": "https://poe.ninja/challenge/unique-flasks",
+        "id": "poe-ninja-unique-flasks",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Unique Jewels",
+        "icon": "poe-ninja-unique-jewels.png",
+        "tooltip": "Unique Jewels",
+        "url": "https://poe.ninja/challenge/unique-jewels",
+        "id": "poe-ninja-unique-jewels",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Unique Relics",
+        "icon": "poe-ninja-unique-relics.png",
+        "tooltip": "Unique Relics",
+        "url": "https://poe.ninja/challenge/unique-relics",
+        "id": "poe-ninja-unique-relics",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Skill Gems",
+        "icon": "poe-ninja-skill-gems.png",
+        "tooltip": "Skill Gems",
+        "url": "https://poe.ninja/challenge/skill-gems",
+        "id": "poe-ninja-skill-gems",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Cluster Jewels",
+        "icon": "poe-ninja-cluster-jewels.png",
+        "tooltip": "Cluster Jewels",
+        "url": "https://poe.ninja/challenge/cluster-jewels",
+        "id": "poe-ninja-cluster-jewels",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Maps",
+        "icon": "poe-ninja-maps.png",
+        "tooltip": "Maps",
+        "url": "https://poe.ninja/challenge/maps",
+        "id": "poe-ninja-maps",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Blighted Maps",
+        "icon": "poe-ninja-blighted-maps.png",
+        "tooltip": "Blighted Maps",
+        "url": "https://poe.ninja/challenge/blighted-maps",
+        "id": "poe-ninja-blighted-maps",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Blight-ravaged Maps",
+        "icon": "poe-ninja-blight-ravaged-maps.png",
+        "tooltip": "Blight-ravaged Maps",
+        "url": "https://poe.ninja/challenge/blight-ravaged-maps",
+        "id": "poe-ninja-blight-ravaged-maps",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Scourged Maps",
+        "icon": "poe-ninja-scourged-maps.png",
+        "tooltip": "Scourged Maps",
+        "url": "https://poe.ninja/challenge/scourged-maps",
+        "id": "poe-ninja-scourged-maps",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Unique Maps",
+        "icon": "poe-ninja-unique-maps.png",
+        "tooltip": "Unique Maps",
+        "url": "https://poe.ninja/challenge/unique-maps",
+        "id": "poe-ninja-unique-maps",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Delirium Orbs",
+        "icon": "poe-ninja-delirium-orbs.png",
+        "tooltip": "Delirium Orbs",
+        "url": "https://poe.ninja/challenge/delirium-orbs",
+        "id": "poe-ninja-delirium-orbs",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Invitations",
+        "icon": "poe-ninja-invitations.png",
+        "tooltip": "Invitations",
+        "url": "https://poe.ninja/challenge/invitations",
+        "id": "poe-ninja-invitations",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Scarabs",
+        "icon": "poe-ninja-scarabs.png",
+        "tooltip": "Scarabs",
+        "url": "https://poe.ninja/challenge/scarabs",
+        "id": "poe-ninja-scarabs",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Base Types",
+        "icon": "poe-ninja-base-types.png",
+        "tooltip": "Base Types",
+        "url": "https://poe.ninja/challenge/base-types",
+        "id": "poe-ninja-base-types",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Fossils",
+        "icon": "poe-ninja-fossils.png",
+        "tooltip": "Fossils",
+        "url": "https://poe.ninja/challenge/fossils",
+        "id": "poe-ninja-fossils",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Resonators",
+        "icon": "poe-ninja-resonators.png",
+        "tooltip": "Resonators",
+        "url": "https://poe.ninja/challenge/resonators",
+        "id": "poe-ninja-resonators",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Helmet Enchants",
+        "icon": "poe-ninja-helmet-enchants.png",
+        "tooltip": "Helmet Enchants",
+        "url": "https://poe.ninja/challenge/helmet-enchants",
+        "id": "poe-ninja-helmet-enchants",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Beasts",
+        "icon": "poe-ninja-beasts.png",
+        "tooltip": "Beasts",
+        "url": "https://poe.ninja/challenge/beasts",
+        "id": "poe-ninja-beasts",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Essences",
+        "icon": "poe-ninja-essences.png",
+        "tooltip": "Essences",
+        "url": "https://poe.ninja/challenge/essences",
+        "id": "poe-ninja-essences",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-ninja",
+        "name": "Vials",
+        "icon": "poe-ninja-vials.png",
+        "tooltip": "Vials",
+        "url": "https://poe.ninja/challenge/vials",
+        "id": "poe-ninja-vials",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "Official Trade",
+        "icon": "poe.png",
+        "tooltip": "Official Trade",
+        "url": "https://www.pathofexile.com/trade",
+        "id": "trade-official",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "Poe.Ninja",
+        "icon": "poe-ninja.png",
+        "tooltip": "Poe.Ninja",
+        "url": "https://poe.ninja/",
+        "id": "economy-poe-ninja",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "PoeWatch",
+        "icon": "poe-watch.ico",
+        "tooltip": "Path of Exile statistics and price data collection page",
+        "url": "https://poe.watch",
+        "id": "other-links-poe-watch",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "Wealthy Exile",
+        "icon": "wealthy-exile.ico",
+        "tooltip": "Farming & bulk selling",
+        "url": "https://wealthyexile.com/trade",
+        "id": "trade-wealthy-exile",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "PoeMap.Trade",
+        "icon": "poe-map-trade.ico",
+        "tooltip": "PoeMap.Trade",
+        "url": "https://poemap.trade",
+        "id": "trade-poe-map-trade",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "Watcher's Eye Search",
+        "icon": "watchers-eye-search.ico",
+        "tooltip": "Watcher's Eye Trade Search",
+        "url": "https://watcherseyesearch.com",
+        "id": "trade-watchers-eye-search",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "PoE Mega",
+        "icon": "poe-mega.png",
+        "tooltip": "Megalomaniac Trade Search",
+        "url": "https://poemega.com",
+        "id": "trade-poe-mega",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "trade",
+        "name": "Arevtur",
+        "icon": "arevtur.png",
+        "tooltip": "In game pricer, trade search, mod viewer ... and more",
+        "url": "https://github.com/mahhov/arevtur",
+        "id": "trade-arevtur",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "poe-lab",
+        "name": "Normal",
+        "icon": "poe-lab-normal.png",
+        "tooltip": "",
+        "url": "https://www.poelab.com/gtgax",
+        "id": "poe-lab-normal",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-lab",
+        "name": "Cruel",
+        "icon": "poe-lab-cruel.png",
+        "tooltip": "",
+        "url": "https://www.poelab.com/r8aws",
+        "id": "poe-lab-cruel",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-lab",
+        "name": "Merc",
+        "icon": "poe-lab-merc.png",
+        "tooltip": "",
+        "url": "https://www.poelab.com/riikv",
+        "id": "poe-lab-merc",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "poe-lab",
+        "name": "Uber",
+        "icon": "poe-lab-uber.png",
+        "tooltip": "",
+        "url": "https://www.poelab.com/wfbra",
+        "id": "poe-lab-uber",
+        "style": "icon"
+    },
+    {
+        "category": "poe",
+        "section": "builds",
+        "name": "Poe.Ninja",
+        "icon": "poe-ninja.png",
+        "tooltip": "Poe.Ninja",
+        "url": "https://poe.ninja/challenge/builds",
+        "id": "builds-poe-ninja",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "builds",
+        "name": "Pohx's RF",
+        "icon": "pohx-net.ico",
+        "tooltip": "Righteous Fire info & guides",
+        "url": "https://www.pohx.net",
+        "id": "other-links-pohx-net",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "builds",
+        "name": "PoBArchives",
+        "icon": "pob-archives.webp",
+        "tooltip": "PoE Build Archives",
+        "url": "https://www.pobarchives.com",
+        "id": "builds-pob-archives",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "builds",
+        "name": "Build of Exile",
+        "icon": "poe.png",
+        "tooltip": "PoE Forum Builds",
+        "url": "https://www.buildofexile.com",
+        "id": "builds-build-of-exile",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "builds",
+        "name": "PoeBuilds",
+        "icon": "poe-builds.png",
+        "tooltip": "Poe Builds",
+        "url": "https://www.poebuilds.cc",
+        "id": "builds-poe-builds",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "loot-filters",
+        "name": "FilterBlade",
+        "icon": "filter-blade.png",
+        "tooltip": "",
+        "url": "https://www.filterblade.xyz",
+        "id": "loot-filter-filter-blade",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "loot-filters",
+        "name": "Filter Master",
+        "icon": "grinding-zone.png",
+        "tooltip": "",
+        "url": "https://grinding.zone/?page=filtermaster",
+        "id": "loot-filter-grinding-zone",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "loot-filters",
+        "name": "Filtration Fork",
+        "icon": "filtration.ico",
+        "tooltip": "",
+        "url": "https://github.com/eugenikus8/Filtration-Fork",
+        "id": "loot-filter-filtration-fork",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "build-tools",
+        "name": "Path of Building",
+        "icon": "path-of-building.png",
+        "tooltip": "Path of Building - Community Fork",
+        "url": "https://pathofbuilding.community",
+        "id": "build-tools-path-of-building-community",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "build-tools",
+        "name": "PoB Cool",
+        "icon": "path-of-building.png",
+        "tooltip": "Browser version of Path of Building",
+        "url": "https://pob.cool",
+        "id": "build-tools-pob-cool",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "build-tools",
+        "name": "PoBB",
+        "icon": "pobb.ico",
+        "tooltip": "Buld link sharing (instead of pastebin) and preview",
+        "url": "https://pobb.in",
+        "id": "build-tools-pobb",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "build-tools",
+        "name": "PoE Planner",
+        "icon": "poe-planner.png",
+        "tooltip": "PoE Planner",
+        "url": "https://poeplanner.com",
+        "id": "build-tools-poe-planner",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "build-tools",
+        "name": "Official Skill Tree",
+        "icon": "poe.png",
+        "tooltip": "Official Passive Skill Tree",
+        "url": "https://www.pathofexile.com/passive-skill-tree",
+        "id": "build-tools-official-passive-skill-tree",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "build-tools",
+        "name": "PoE Skill Tree",
+        "icon": "poe-skill-tree.png",
+        "tooltip": "PoE Skill Tree",
+        "url": "https://poeskilltree.com/",
+        "id": "build-tools-poe-skill-tree",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "build-tools",
+        "name": "Path of Pathing",
+        "icon": "path-of-pathing.ico",
+        "tooltip": "Talents & atlas with automated optimal path finding",
+        "url": "https://www.pathofpathing.com/",
+        "id": "build-tools-path-of-pathing",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "Path of Exile Wiki",
+        "icon": "poe-wiki.ico",
+        "tooltip": "PoE Wiki - made by PoE community",
+        "url": "https://www.poewiki.net",
+        "id": "media-path-of-exile-wiki-community",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "Reddit",
+        "icon": "reddit.png",
+        "tooltip": "Part of Exile Reddit",
+        "url": "https://www.reddit.com/r/pathofexile",
+        "id": "media-reddit",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "Path of Exile",
+        "icon": "poe.png",
+        "tooltip": "Path of Exile Official Web",
+        "url": "https://www.pathofexile.com",
+        "id": "media-path-of-exile-official-web",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "X / Twitter",
+        "icon": "x.png",
+        "tooltip": "Path of Exile on X",
+        "url": "https://x.com/pathofexile",
+        "id": "media-path-of-exile-twitter",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "YouTube",
+        "icon": "youtube.png",
+        "tooltip": "Path of Exile YouTube",
+        "url": "https://www.youtube.com/user/grindinggear",
+        "id": "media-path-of-exile-youtube",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "PoE Patch Notes",
+        "icon": "poe-patch-notes.ico",
+        "tooltip": "Every Path of Exile patch note on one page",
+        "url": "https://poepatchnotes.com",
+        "id": "media-poe-patch-notes",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "GGG Tracker",
+        "icon": "ggg-tracker.png",
+        "tooltip": "GGG Activity Tracker",
+        "url": "https://www.gggtracker.com",
+        "id": "media-ggg-tracker",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "Forever Exiled",
+        "icon": "forever-exiled.png",
+        "tooltip": "Path of Exile podcast",
+        "url": "https://foreverexiled.com/",
+        "id": "media-forever-exiled",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "media",
+        "name": "Path of Exile Media",
+        "icon": "path-of-exile-media.ico",
+        "tooltip": "PoE media links - Videos, News, ...",
+        "url": "https://pathofexile.media",
+        "id": "media-path-of-exile-media",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "game-overlay",
+        "name": "Awakened PoE Trade",
+        "icon": "awakened-poe-trade.png",
+        "tooltip": "Most popular overlay for PoE",
+        "url": "https://github.com/SnosMe/awakened-poe-trade",
+        "id": "game-overlay-awakened-poe-trade",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "game-overlay",
+        "name": "Poe Lurker",
+        "icon": "poe-lurker.png",
+        "tooltip": "Poe Lurker",
+        "url": "https://github.com/C1rdec/Poe-Lurker",
+        "id": "game-overlay-poe-lurker",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "game-overlay",
+        "name": "XileTrade",
+        "icon": "github.png",
+        "tooltip": "Price your items and make your trading easier",
+        "url": "https://github.com/maxensas/xiletrade",
+        "id": "game-overlay-xile-trade",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "game-overlay",
+        "name": "Lailloken UI",
+        "icon": "lailloken-ui.ico",
+        "tooltip": "A light-weight AHK script with UI extensions and QoL features",
+        "url": "https://github.com/Lailloken/Lailloken-UI",
+        "id": "game-overlay-lunaris",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "game-overlay",
+        "name": "Mercury Trade Community",
+        "icon": "mercury-trade.png",
+        "tooltip": "Mercury Trade Community",
+        "url": "https://github.com/Morph21/MercuryTrade-Community-Fork",
+        "id": "game-overlay-mercury-trade-community",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "game-overlay",
+        "name": "PoE Overlay Community",
+        "icon": "poe-overlay.png",
+        "tooltip": "PoE Overlay Community",
+        "url": "https://github.com/ijemafe/PoE-Overlay",
+        "id": "game-overlay-poe-overlay-community",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "game-overlay",
+        "name": "SlimTrade",
+        "icon": "slim-trade.png",
+        "tooltip": "SlimTrade",
+        "url": "https://github.com/zmilla93/SlimTrade",
+        "id": "game-overlay-slim-trade",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Maxroll",
+        "icon": "maxroll-gg.ico",
+        "tooltip": "Guides, Resources and News for Path of Exile",
+        "url": "https://maxroll.gg/poe/",
+        "id": "other-links-maxroll",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Vault",
+        "icon": "poe-vault.png",
+        "tooltip": "PoE news, guides and more ... created by Icy Veins team",
+        "url": "https://www.poe-vault.com",
+        "id": "other-links-craft-of-exile",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Maps of Exile",
+        "icon": "maps-of-exile.png",
+        "tooltip": "All about maps and divination cards",
+        "url": "https://mapsofexile.com",
+        "id": "other-links-maps-of-exile",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Craft of Exile",
+        "icon": "craft-of-exile.png",
+        "tooltip": "Ultimate Crafting Tool",
+        "url": "https://www.craftofexile.com",
+        "id": "other-links-craft-of-exile",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoEDB",
+        "icon": "poe-db.png",
+        "tooltip": "Great Path of Exile database",
+        "url": "https://poedb.tw/us/",
+        "id": "other-links-poe-db",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Divine Toll",
+        "icon": "divine-toll.webp",
+        "tooltip": "Price index for Path of Exile",
+        "url": "https://www.divinetoll.com/",
+        "id": "other-links-divine-toll",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Strat",
+        "icon": "poe-strat.svg",
+        "tooltip": "Tools to help play PoE",
+        "url": "https://poestrat.com",
+        "id": "other-links-poe-strat",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Exile Leveling",
+        "icon": "exile-leveling.ico",
+        "tooltip": "Leveling guide with easy build import for shopping",
+        "url": "https://heartofphos.github.io/exile-leveling/",
+        "id": "other-links-exile-leveling",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Leveling",
+        "icon": "poe-leveling.ico",
+        "tooltip": "Leveling guide based off Zizaran's league start video",
+        "url": "https://poe-leveling.com",
+        "id": "other-links-poe-leveling",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Beginner Guide",
+        "icon": "poe.png",
+        "tooltip": "Toxic Rain Champion Beginner Build Guide",
+        "url": "https://poe-beginner-guide.com",
+        "id": "other-links-poe-beginner-guide",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Timeless Calculator",
+        "icon": "timeless-jewel.png",
+        "tooltip": "A simple timeless jewel calculator with a skill tree view",
+        "url": "https://vilsol.github.io/timeless-jewels",
+        "id": "other-links-timeless-calculator",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Leveling Guide",
+        "icon": "github.png",
+        "tooltip": "Based on the zone you're in, notes and diagrams will be shown in an overlay.",
+        "url": "https://github.com/JusKillmeQik/PoE-Leveling-Guide",
+        "id": "other-links-poe-leveling-guide",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "The Casual Exile Guide",
+        "icon": "sheets.png",
+        "tooltip": "Sheet full of useful PoE informations (by Path of Math)",
+        "url": "https://docs.google.com/spreadsheets/d/1iUS1SL5vz8ts8S3m1CQg9b1HA1zlTIMkLSQy-cuQ4Cs",
+        "id": "other-links-path-of-math-cheat-sheet",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Cheat Sheets",
+        "icon": "sheets.png",
+        "tooltip": "Sheet full of useful PoE informations (by FixFaxer)",
+        "url": "https://docs.google.com/spreadsheets/d/1fIs8sdvgZG7iVouPdtFkbRx5kv55_xVja8l19yubyRU",
+        "id": "other-links-fixfaxers-cheat-sheet",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Exilence CE",
+        "icon": "exilence-next.png",
+        "tooltip": "Tool to track gear, currency, maps and more",
+        "url": "https://github.com/exilence-ce/exilence-ce",
+        "id": "other-links-exilence-ce",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoeStack",
+        "icon": "poe-stack.ico",
+        "tooltip": "Economy and characters data. Track, manage, and sell your stash tabs. &nbsp; &nbsp; &nbsp; <span class=\"fa-alert\">&#xf071;</span> Connection to TFT - controversial trading discord <span class=\"fa-alert\">&#xf071;</span>",
+        "url": "https://poestack.com",
+        "id": "other-links-poe-stack",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Exile Diary",
+        "icon": "exile-diary.png",
+        "tooltip": "Track literally everything that drops in your maps, and more!",
+        "url": "https://github.com/Qt-dev/exile-diary",
+        "id": "other-links-exile-diary",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Exile Tools",
+        "icon": "exile-tools.png",
+        "tooltip": "A few small tools for Path of Exile",
+        "url": "https://exile-tools.com",
+        "id": "other-links-exile-tools",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "TraXile",
+        "icon": "traxile.ico",
+        "tooltip": "Live tracking of your map runs and other activities",
+        "url": "https://github.com/dermow/TraXile",
+        "id": "other-links-traxile",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Mechanic Watch",
+        "icon": "github.png",
+        "tooltip": "AHK Script tracks and warns to complete certain mechanics.",
+        "url": "https://github.com/sushibagel/PoE-Mechanic-Watch",
+        "id": "other-links-poe-mechanic-watch",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Blight",
+        "icon": "blight.png",
+        "tooltip": "Oil crafting tool",
+        "url": "http://blight.raelys.com",
+        "id": "other-links-blight",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Poe Prices",
+        "icon": "poe-prices-info.png",
+        "tooltip": "Check prices of your items",
+        "url": "https://www.poeprices.info/",
+        "id": "other-links-poe-prices-info",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Profile Info",
+        "icon": "poe-profile-info.png",
+        "tooltip": "Ultimate PoE profile page",
+        "url": "https://poe-profile.info",
+        "id": "other-links-poe-profile-info",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Wraeclast",
+        "icon": "wraeclast.png",
+        "tooltip": "League Hub - informations related to league mechanics",
+        "url": "https://wraeclast.com",
+        "id": "other-links-wraeclast",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Antiquary",
+        "icon": "poe-antiquary.png",
+        "tooltip": "Item prices from past challenge leagues",
+        "url": "https://poe-antiquary.xyz/",
+        "id": "other-links-poe-antiquary",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PatchBot",
+        "icon": "patchbot.png",
+        "tooltip": "PatchBot will keep your Discord channel up-to-date on all the latest Path of Exile changes.",
+        "url": "https://patchbot.io/games/path-of-exile",
+        "id": "other-links-patchbot",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Atlas",
+        "icon": "poe-atlas.png",
+        "tooltip": "View the entire Atlas of Worlds, search for maps and simulate socketing watchstones.",
+        "url": "https://poeatlas.net",
+        "id": "other-links-poe-atlas",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Hideout Showcase",
+        "icon": "hideout-showcase.png",
+        "tooltip": "Hideout layouts database",
+        "url": "https://hideoutshowcase.com",
+        "id": "other-links-hideout-showcase",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Aura Calculator",
+        "icon": "aura-calculator.png",
+        "tooltip": "Mikelat's PoE Aura Calculator - OUT OF DATE ! ... still usable for basic aura testing",
+        "url": "https://poe.mikelat.com",
+        "id": "other-links-aura-calculator",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "El rincÃ³n del Exiliado",
+        "icon": "exiles-corner.png",
+        "tooltip": "Syndicate custom cheat sheet template (The Exile's Corner)",
+        "url": "https://pathofexile.elrincondelexiliado.com/syndicate/",
+        "id": "other-links-exiles-corner",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoeSyn",
+        "icon": "poe-syn.png",
+        "tooltip": "Chromatic calculator and Syndicate cheat sheet",
+        "url": "https://poesyn.xyz",
+        "id": "other-links-poesyn",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Gems",
+        "icon": "poe-gems.png",
+        "tooltip": "Lists all the skill gems from the game along with details about each of them",
+        "url": "https://poegems.com",
+        "id": "other-links-poegems",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Chaos Recipe Enhancer",
+        "icon": "chaos-recipe-enhancer.png",
+        "tooltip": "Shows which items you need to pick up for the Chaos Recipe.",
+        "url": "https://github.com/ChaosRecipeEnhancer/EnhancePoEApp",
+        "id": "other-links-poe-chaos-recipe-enhancer",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Vorici Chromatic Calculator",
+        "icon": "vorici-chromatic-calculator.png",
+        "tooltip": "This tool predicts Chromatic Orb rolls.",
+        "url": "https://siveran.github.io/calc.html",
+        "id": "other-links-vorici-chromatic-calculator",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Oriath.net",
+        "icon": "poe.png",
+        "tooltip": "Character speech collection and Atlas completion tool",
+        "url": "https://oriath.net",
+        "id": "other-links-oriath-net",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "poeHOW",
+        "icon": "poehow.ico",
+        "tooltip": "Nice cheatsheet-like web full of info - economic, guides, crafting, addons, ...",
+        "url": "https://poe.how",
+        "id": "other-links-poehow",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Path of Regex",
+        "icon": "poe-regex.ico",
+        "tooltip": "Generating search strings",
+        "url": "https://poe.re",
+        "id": "other-links-poe-regex",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Fish",
+        "icon": "albino-rhoa-feather.png",
+        "tooltip": "PoE Fish aims to be a reliable source for information regarding fishing in Path of Exile",
+        "url": "https://poe.fish",
+        "id": "other-links-poe-fish",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Expand Challenges",
+        "icon": "chrome-web-store.png",
+        "tooltip": "Expand or hide all (in)complete PoE challenges.",
+        "url": "https://chrome.google.com/webstore/detail/poe-expand-challenges/hlmhndfflbjhblhobpfncenoedjeheec",
+        "id": "other-links-poe-expand-challenges",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Uber Stash",
+        "icon": "poe.png",
+        "tooltip": "Uber stash will allow you to group upto 10 of your stash tabs, filter and sort through your items.",
+        "url": "https://www.poebuddy.xyz",
+        "id": "other-links-uber-stash",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Cheatsheet Monster",
+        "icon": "poe.png",
+        "tooltip": "Path of Exile Cheatsheet of Cheatsheets",
+        "url": "https://cheatsheet.monster/poe/",
+        "id": "other-links-cheatsheet-monster",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Vendor Recipe Cheatsheet",
+        "icon": "github.png",
+        "tooltip": "Vendor Recipe Cheatsheet",
+        "url": "https://github.com/willhuynh/VendorRecipeCheatsheet",
+        "id": "other-links-vendor-recipe-cheatsheet",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Ladder",
+        "icon": "poe-ladder.ico",
+        "tooltip": "PoE Uniques Ladder & Tracker",
+        "url": "https://poeladder.com/",
+        "id": "other-links-poe-ladder",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Divcards",
+        "icon": "divcards.svg",
+        "tooltip": "Divination Cards info & drop data",
+        "url": "https://divicards-site.pages.dev",
+        "id": "other-links-divcards",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Div Cards",
+        "icon": "poe.png",
+        "tooltip": "Where to farm divination cards",
+        "url": "https://divcards.io",
+        "id": "other-links-div-cards",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Divcards App",
+        "icon": "github.png",
+        "tooltip": "Desktop Application for Path of Exile divination cards",
+        "url": "https://github.com/shonya3/divicards",
+        "id": "other-links-divcards-app",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "CWDT",
+        "icon": "cwdt.png",
+        "tooltip": "CWDT Info - All about CWDT build",
+        "url": "https://cwdt.info",
+        "id": "other-links-cwdt",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Racing",
+        "icon": "poe-racing.png",
+        "tooltip": "Private league & race ladder",
+        "url": "https://poe-racing.com",
+        "id": "other-links-poe-racing",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Exile Companion",
+        "icon": "exile-companion.webp",
+        "tooltip": "iPhone/iPad app for PoE",
+        "url": "https://apps.apple.com/us/app/exile-companion-poe/id1457210391",
+        "id": "other-links-exile-companion",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Vaal Flippers",
+        "icon": "sheets.png",
+        "tooltip": "Flipping (trading) sheet",
+        "url": "http://vaalflippers.com/",
+        "id": "other-links-vaal-flippers",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Challenger",
+        "icon": "poe-challenger.jpeg",
+        "tooltip": "League challenges analysis/newbie guide",
+        "url": "https://www.patreon.com/vironlawck",
+        "id": "other-links-poe-challenger",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoEMate",
+        "icon": "poe-mate.webp",
+        "tooltip": "Mobile skilltree app",
+        "url": "https://www.pathofexile.com/forum/view-thread/1363453",
+        "id": "other-links-poe-mate",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Map Modifier Calc",
+        "icon": "sheets.png",
+        "tooltip": "Map Modifier Effect Calc for 60% and 90%",
+        "url": "https://docs.google.com/spreadsheets/d/1jm5gjz7ewebtZe-dA0bQyEkZnyy0Q92uBNNqam5i7qY/edit#gid=0",
+        "id": "other-links-map-modifier-calc",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "PoE Trade Telegram Notifier",
+        "icon": "github.png",
+        "tooltip": "Receive and reply to trade offer via Telegram messenger.",
+        "url": "https://github.com/phen0menon/poe-trade-telegram-notifier",
+        "id": "other-links-poe-trade-telegram-notifier",
+        "style": "button"
+    },
+    {
+        "category": "poe",
+        "section": "other-links",
+        "name": "Wraedle",
+        "icon": "wraedle.png",
+        "tooltip": "Game to test your knowledge of PoE's unique items",
+        "url": "https://www.wraedle.com",
+        "id": "other-links-wraedle",
+        "style": "button"
+    }
+]

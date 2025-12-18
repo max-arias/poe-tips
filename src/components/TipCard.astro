@@ -1,0 +1,356 @@
+---
+/**
+ * TipCard - Display a tip with category badge, tags, outdated indicator, etc.
+ */
+
+interface Props {
+    title: string;
+    description: string;
+    slug: string;
+    category: string;
+    tags: string[];
+    patchVersion: string;
+    game: "poe1" | "poe2" | "both";
+    mayBeOutdated?: boolean;
+    difficulty?: "beginner" | "intermediate" | "advanced";
+    videoUrl?: string;
+    source?: {
+        name: string;
+        url: string;
+    };
+    estimatedValue?: string;
+}
+
+const {
+    title,
+    description,
+    slug,
+    category,
+    tags,
+    patchVersion,
+    game,
+    mayBeOutdated = false,
+    difficulty,
+    videoUrl,
+    source,
+    estimatedValue,
+} = Astro.props;
+
+// Category display names and icons
+const categoryInfo: Record<string, { label: string; icon: string }> = {
+    crafting: { label: "Crafting", icon: "🔨" },
+    farming: { label: "Farming", icon: "🌾" },
+    atlas: { label: "Atlas", icon: "🗺️" },
+    currency: { label: "Currency", icon: "💰" },
+    mechanics: { label: "Mechanics", icon: "⚙️" },
+    league: { label: "League", icon: "🎮" },
+    leveling: { label: "Leveling", icon: "📈" },
+};
+
+const info = categoryInfo[category] || { label: category, icon: "📝" };
+
+// Game badge
+const gameLabels: Record<string, string> = {
+    poe1: "PoE 1",
+    poe2: "PoE 2",
+    both: "Both",
+};
+---
+
+<article
+    class="tip-card"
+    data-game={game}
+    data-category={category}
+    data-tags={tags.join(",")}
+>
+    {
+        mayBeOutdated && (
+            <div class="warning-banner">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                    <path d="M12 9v4" />
+                    <path d="M12 17h.01" />
+                </svg>
+                <span>This tip may be outdated (Patch {patchVersion})</span>
+            </div>
+        )
+    }
+
+    <div class="card-header">
+        <div class="badges">
+            <span class={`badge badge-${category}`}>
+                {info.icon}
+                {info.label}
+            </span>
+            {
+                difficulty && (
+                    <span class={`badge badge-${difficulty}`}>
+                        {difficulty.charAt(0).toUpperCase() +
+                            difficulty.slice(1)}
+                    </span>
+                )
+            }
+            {
+                game !== "both" && (
+                    <span class="badge badge-game">{gameLabels[game]}</span>
+                )
+            }
+        </div>
+    </div>
+
+    <a href={`/tips/${slug}`} class="card-link">
+        <h3 class="card-title">{title}</h3>
+    </a>
+
+    <p class="card-description">{description}</p>
+
+    <div class="card-meta">
+        <div class="meta-left">
+            {
+                videoUrl && (
+                    <span class="meta-item has-video" title="Has video">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                        Video
+                    </span>
+                )
+            }
+            <span class="meta-item patch-version" title="Patch version">
+                📌 {patchVersion}
+            </span>
+            {
+                estimatedValue && (
+                    <span
+                        class="meta-item estimated-value"
+                        title="Estimated value"
+                    >
+                        💎 {estimatedValue}
+                    </span>
+                )
+            }
+        </div>
+    </div>
+
+    <div class="card-tags">
+        {
+            tags.map((tag) => (
+                <button type="button" class="tag" data-tag={tag}>
+                    #{tag}
+                </button>
+            ))
+        }
+    </div>
+
+    {
+        source && (
+            <div class="card-source">
+                <span>Source:</span>
+                <a href={source.url} target="_blank" rel="noopener noreferrer">
+                    {source.name}
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" x2="21" y1="14" y2="3" />
+                    </svg>
+                </a>
+            </div>
+        )
+    }
+</article>
+
+<style>
+    .tip-card {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-lg);
+        transition:
+            border-color var(--transition-fast),
+            transform var(--transition-fast);
+    }
+
+    .tip-card:hover {
+        border-color: var(--border-light);
+    }
+
+    .tip-card .warning-banner {
+        margin-bottom: var(--space-md);
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: var(--space-sm);
+    }
+
+    .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+    }
+
+    .badge-game {
+        background-color: rgba(96, 165, 250, 0.2);
+        color: #60a5fa;
+    }
+
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card-title {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        margin-bottom: var(--space-sm);
+        color: var(--text-primary);
+        transition: color var(--transition-fast);
+    }
+
+    .card-link:hover .card-title {
+        color: var(--accent);
+    }
+
+    .card-description {
+        color: var(--text-secondary);
+        font-size: var(--text-sm);
+        line-height: var(--leading-relaxed);
+        margin-bottom: var(--space-md);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--space-md);
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+    }
+
+    .meta-left {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-md);
+    }
+
+    .meta-item {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+    }
+
+    .has-video {
+        color: var(--color-farming);
+    }
+
+    .estimated-value {
+        color: var(--color-currency);
+    }
+
+    .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        margin-bottom: var(--space-sm);
+    }
+
+    .tag {
+        padding: 2px var(--space-sm);
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        background-color: var(--bg-tertiary);
+        border: 1px solid transparent;
+        border-radius: var(--radius-full);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .tag:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+        background-color: rgba(201, 170, 113, 0.1);
+    }
+
+    .card-source {
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        padding-top: var(--space-sm);
+        border-top: 1px solid var(--border);
+    }
+
+    .card-source a {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--accent-dim);
+    }
+
+    .card-source a:hover {
+        color: var(--accent);
+    }
+
+    /* Hidden state for filtering */
+    .tip-card.hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    function initTagClicks() {
+        document.querySelectorAll(".tag").forEach((tag) => {
+            tag.addEventListener("click", (e) => {
+                e.preventDefault();
+                const tagName = (e.target as HTMLElement).dataset.tag;
+                if (tagName) {
+                    window.dispatchEvent(
+                        new CustomEvent("tag-clicked", {
+                            detail: { tag: tagName },
+                        }),
+                    );
+                }
+            });
+        });
+    }
+
+    initTagClicks();
+    document.addEventListener("astro:page-load", initTagClicks);
+</script>

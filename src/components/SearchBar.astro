@@ -1,0 +1,250 @@
+---
+/**
+ * SearchBar - Fuzzy search with abbreviation expansion
+ * Uses Fuse.js for client-side search and expands PoE abbreviations
+ */
+
+interface Props {
+    placeholder?: string;
+    class?: string;
+}
+
+const {
+    placeholder = "Search tips... (try 'rf', 'coc', 'div')",
+    class: className,
+} = Astro.props;
+---
+
+<div class:list={["search-container", className]} id="search-container">
+    <div class="search-wrapper">
+        <svg
+            class="search-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input
+            type="search"
+            id="search-input"
+            placeholder={placeholder}
+            autocomplete="off"
+            spellcheck="false"
+        />
+        <button
+            type="button"
+            class="clear-btn"
+            id="clear-search"
+            aria-label="Clear search"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <div class="abbreviation-hint" id="abbreviation-hint"></div>
+</div>
+
+<style>
+    .search-container {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .search-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: var(--space-md);
+        color: var(--text-muted);
+        pointer-events: none;
+    }
+
+    input {
+        width: 100%;
+        padding: var(--space-sm) var(--space-md);
+        padding-left: calc(var(--space-md) + 24px);
+        padding-right: calc(var(--space-md) + 24px);
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        color: var(--text-primary);
+        font-size: var(--text-base);
+        transition:
+            border-color var(--transition-fast),
+            box-shadow var(--transition-fast);
+    }
+
+    input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(201, 170, 113, 0.1);
+    }
+
+    input::placeholder {
+        color: var(--text-muted);
+    }
+
+    .clear-btn {
+        position: absolute;
+        right: var(--space-sm);
+        padding: var(--space-xs);
+        color: var(--text-muted);
+        border-radius: var(--radius-sm);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-fast);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .clear-btn:hover {
+        color: var(--text-primary);
+        background-color: var(--bg-tertiary);
+    }
+
+    .search-container.has-value .clear-btn {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .abbreviation-hint {
+        margin-top: var(--space-xs);
+        padding-left: var(--space-md);
+        font-size: var(--text-sm);
+        color: var(--accent);
+        min-height: 1.5em;
+    }
+
+    .abbreviation-hint:empty {
+        display: none;
+    }
+</style>
+
+<script>
+    import abbreviationsData from "../data/abbreviations.json";
+
+    const DEBOUNCE_MS = 200;
+
+    function initSearch() {
+        const container = document.getElementById("search-container");
+        const input = document.getElementById(
+            "search-input",
+        ) as HTMLInputElement | null;
+        const clearBtn = document.getElementById("clear-search");
+        const hintEl = document.getElementById("abbreviation-hint");
+
+        if (!container || !input || !clearBtn || !hintEl) return;
+
+        let debounceTimer: ReturnType<typeof setTimeout>;
+
+        // Build abbreviation lookup map
+        const abbrMap = new Map<string, string>();
+        abbreviationsData.abbreviations.forEach((item) => {
+            abbrMap.set(item.abbr.toLowerCase(), item.full);
+        });
+
+        // Handle input
+        input.addEventListener("input", () => {
+            const value = input.value.trim();
+
+            // Toggle has-value class for clear button visibility
+            container.classList.toggle("has-value", value.length > 0);
+
+            // Check for abbreviation match
+            const lowerValue = value.toLowerCase();
+            const expansion = abbrMap.get(lowerValue);
+
+            if (expansion && value.length > 0) {
+                hintEl.textContent = `💡 Searching for: "${expansion}"`;
+            } else {
+                hintEl.textContent = "";
+            }
+
+            // Debounced search event
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                // Get expanded search terms
+                const searchTerms = expandSearchTerms(value, abbrMap);
+
+                window.dispatchEvent(
+                    new CustomEvent("search-changed", {
+                        detail: {
+                            query: value,
+                            expandedTerms: searchTerms,
+                        },
+                    }),
+                );
+            }, DEBOUNCE_MS);
+        });
+
+        // Handle clear button
+        clearBtn.addEventListener("click", () => {
+            input.value = "";
+            container.classList.remove("has-value");
+            hintEl.textContent = "";
+            input.focus();
+
+            window.dispatchEvent(
+                new CustomEvent("search-changed", {
+                    detail: { query: "", expandedTerms: [] },
+                }),
+            );
+        });
+
+        // Handle escape key
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                clearBtn.click();
+            }
+        });
+    }
+
+    function expandSearchTerms(
+        query: string,
+        abbrMap: Map<string, string>,
+    ): string[] {
+        if (!query) return [];
+
+        const terms = [query.toLowerCase()];
+        const words = query.toLowerCase().split(/\s+/);
+
+        // Expand each word if it's an abbreviation
+        words.forEach((word) => {
+            const expansion = abbrMap.get(word);
+            if (expansion) {
+                terms.push(expansion);
+            }
+        });
+
+        return [...new Set(terms)];
+    }
+
+    // Initialize on page load
+    initSearch();
+    document.addEventListener("astro:page-load", initSearch);
+</script>

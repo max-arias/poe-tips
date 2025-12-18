@@ -1,0 +1,106 @@
+---
+/**
+ * GameToggle - Pill-style toggle for PoE 1 / PoE 2 / Both selection
+ * Persists preference to localStorage and emits custom events for filtering
+ */
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["game-toggle", className]} id="game-toggle">
+    <button type="button" data-game="poe1" class="toggle-btn"> PoE 1 </button>
+    <button type="button" data-game="poe2" class="toggle-btn"> PoE 2 </button>
+    <button type="button" data-game="both" class="toggle-btn active">
+        Both
+    </button>
+</div>
+
+<style>
+    .game-toggle {
+        display: inline-flex;
+        gap: 0;
+        background-color: var(--bg-tertiary);
+        border-radius: var(--radius-full);
+        padding: 4px;
+        border: 1px solid var(--border);
+    }
+
+    .toggle-btn {
+        padding: var(--space-xs) var(--space-md);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--text-secondary);
+        border-radius: var(--radius-full);
+        transition: all var(--transition-fast);
+        cursor: pointer;
+        background: transparent;
+        border: none;
+    }
+
+    .toggle-btn:hover:not(.active) {
+        color: var(--text-primary);
+    }
+
+    .toggle-btn.active {
+        background-color: var(--accent);
+        color: var(--bg-primary);
+    }
+</style>
+
+<script>
+    const STORAGE_KEY = "poe-tips-game-preference";
+
+    function initGameToggle() {
+        const container = document.getElementById("game-toggle");
+        if (!container) return;
+
+        const buttons =
+            container.querySelectorAll<HTMLButtonElement>(".toggle-btn");
+
+        // Load saved preference
+        const savedGame = localStorage.getItem(STORAGE_KEY) || "both";
+        setActiveGame(savedGame, buttons);
+
+        // Handle clicks
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const game = btn.dataset.game;
+                if (!game) return;
+
+                setActiveGame(game, buttons);
+                localStorage.setItem(STORAGE_KEY, game);
+
+                // Emit custom event for other components to react
+                window.dispatchEvent(
+                    new CustomEvent("game-changed", {
+                        detail: { game },
+                    }),
+                );
+            });
+        });
+
+        // Emit initial event
+        window.dispatchEvent(
+            new CustomEvent("game-changed", {
+                detail: { game: savedGame },
+            }),
+        );
+    }
+
+    function setActiveGame(
+        game: string,
+        buttons: NodeListOf<HTMLButtonElement>,
+    ) {
+        buttons.forEach((btn) => {
+            btn.classList.toggle("active", btn.dataset.game === game);
+        });
+    }
+
+    // Initialize on page load and after Astro page transitions
+    initGameToggle();
+    document.addEventListener("astro:page-load", initGameToggle);
+</script>

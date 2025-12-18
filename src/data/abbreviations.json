@@ -1,0 +1,669 @@
+{
+    "abbreviations": [
+        {
+            "abbr": "rf",
+            "full": "righteous fire",
+            "category": "skill"
+        },
+        {
+            "abbr": "coc",
+            "full": "cast on critical strike",
+            "category": "support"
+        },
+        {
+            "abbr": "cwc",
+            "full": "cast while channelling",
+            "category": "support"
+        },
+        {
+            "abbr": "cwdt",
+            "full": "cast when damage taken",
+            "category": "support"
+        },
+        {
+            "abbr": "dot",
+            "full": "damage over time",
+            "category": "mechanic"
+        },
+        {
+            "abbr": "dps",
+            "full": "damage per second",
+            "category": "mechanic"
+        },
+        {
+            "abbr": "aoe",
+            "full": "area of effect",
+            "category": "mechanic"
+        },
+        {
+            "abbr": "ehp",
+            "full": "effective hit points",
+            "category": "mechanic"
+        },
+        {
+            "abbr": "rng",
+            "full": "random number generator",
+            "category": "mechanic"
+        },
+        {
+            "abbr": "ci",
+            "full": "chaos inoculation",
+            "category": "keystone"
+        },
+        {
+            "abbr": "mom",
+            "full": "mind over matter",
+            "category": "keystone"
+        },
+        {
+            "abbr": "rt",
+            "full": "resolute technique",
+            "category": "keystone"
+        },
+        {
+            "abbr": "ir",
+            "full": "iron reflexes",
+            "category": "keystone"
+        },
+        {
+            "abbr": "bm",
+            "full": "blood magic",
+            "category": "keystone"
+        },
+        {
+            "abbr": "eb",
+            "full": "eldritch battery",
+            "category": "keystone"
+        },
+        {
+            "abbr": "ee",
+            "full": "elemental equilibrium",
+            "category": "keystone"
+        },
+        {
+            "abbr": "eo",
+            "full": "elemental overload",
+            "category": "keystone"
+        },
+        {
+            "abbr": "gi",
+            "full": "ghost reaver",
+            "category": "keystone"
+        },
+        {
+            "abbr": "pa",
+            "full": "perfect agony",
+            "category": "keystone"
+        },
+        {
+            "abbr": "ua",
+            "full": "unwavering stance",
+            "category": "keystone"
+        },
+        {
+            "abbr": "av",
+            "full": "avatar of fire",
+            "category": "keystone"
+        },
+        {
+            "abbr": "es",
+            "full": "energy shield",
+            "category": "defense"
+        },
+        {
+            "abbr": "ev",
+            "full": "evasion",
+            "category": "defense"
+        },
+        {
+            "abbr": "ar",
+            "full": "armour",
+            "category": "defense"
+        },
+        {
+            "abbr": "res",
+            "full": "resistance",
+            "category": "defense"
+        },
+        {
+            "abbr": "phys",
+            "full": "physical",
+            "category": "defense"
+        },
+        {
+            "abbr": "ele",
+            "full": "elemental",
+            "category": "defense"
+        },
+        {
+            "abbr": "ll",
+            "full": "low life",
+            "category": "defense"
+        },
+        {
+            "abbr": "ci",
+            "full": "chaos inoculation",
+            "category": "defense"
+        },
+        {
+            "abbr": "aegis",
+            "full": "aegis aurora",
+            "category": "item"
+        },
+        {
+            "abbr": "melding",
+            "full": "melding of the flesh",
+            "category": "item"
+        },
+        {
+            "abbr": "div",
+            "full": "divine orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "ex",
+            "full": "exalted orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "c",
+            "full": "chaos orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "alch",
+            "full": "orb of alchemy",
+            "category": "currency"
+        },
+        {
+            "abbr": "alt",
+            "full": "orb of alteration",
+            "category": "currency"
+        },
+        {
+            "abbr": "aug",
+            "full": "orb of augmentation",
+            "category": "currency"
+        },
+        {
+            "abbr": "scour",
+            "full": "orb of scouring",
+            "category": "currency"
+        },
+        {
+            "abbr": "vaal",
+            "full": "vaal orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "regret",
+            "full": "orb of regret",
+            "category": "currency"
+        },
+        {
+            "abbr": "fuse",
+            "full": "orb of fusing",
+            "category": "currency"
+        },
+        {
+            "abbr": "jew",
+            "full": "jeweller's orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "chrom",
+            "full": "chromatic orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "gcp",
+            "full": "gemcutter's prism",
+            "category": "currency"
+        },
+        {
+            "abbr": "blessed",
+            "full": "blessed orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "annul",
+            "full": "orb of annulment",
+            "category": "currency"
+        },
+        {
+            "abbr": "sacred",
+            "full": "sacred orb",
+            "category": "currency"
+        },
+        {
+            "abbr": "pob",
+            "full": "path of building",
+            "category": "tool"
+        },
+        {
+            "abbr": "poe.ninja",
+            "full": "poe ninja",
+            "category": "tool"
+        },
+        {
+            "abbr": "craftofexile",
+            "full": "craft of exile",
+            "category": "tool"
+        },
+        {
+            "abbr": "awakened",
+            "full": "awakened poe trade",
+            "category": "tool"
+        },
+        {
+            "abbr": "poedb",
+            "full": "poe database",
+            "category": "tool"
+        },
+        {
+            "abbr": "ssf",
+            "full": "solo self-found",
+            "category": "mode"
+        },
+        {
+            "abbr": "hc",
+            "full": "hardcore",
+            "category": "mode"
+        },
+        {
+            "abbr": "sc",
+            "full": "softcore",
+            "category": "mode"
+        },
+        {
+            "abbr": "std",
+            "full": "standard",
+            "category": "mode"
+        },
+        {
+            "abbr": "ms",
+            "full": "movement speed",
+            "category": "stat"
+        },
+        {
+            "abbr": "as",
+            "full": "attack speed",
+            "category": "stat"
+        },
+        {
+            "abbr": "cs",
+            "full": "cast speed",
+            "category": "stat"
+        },
+        {
+            "abbr": "cdr",
+            "full": "cooldown recovery",
+            "category": "stat"
+        },
+        {
+            "abbr": "aps",
+            "full": "attacks per second",
+            "category": "stat"
+        },
+        {
+            "abbr": "cps",
+            "full": "casts per second",
+            "category": "stat"
+        },
+        {
+            "abbr": "str",
+            "full": "strength",
+            "category": "stat"
+        },
+        {
+            "abbr": "dex",
+            "full": "dexterity",
+            "category": "stat"
+        },
+        {
+            "abbr": "int",
+            "full": "intelligence",
+            "category": "stat"
+        },
+        {
+            "abbr": "iiq",
+            "full": "increased item quantity",
+            "category": "stat"
+        },
+        {
+            "abbr": "iir",
+            "full": "increased item rarity",
+            "category": "stat"
+        },
+        {
+            "abbr": "mf",
+            "full": "magic find",
+            "category": "stat"
+        },
+        {
+            "abbr": "bis",
+            "full": "best in slot",
+            "category": "general"
+        },
+        {
+            "abbr": "gg",
+            "full": "good game / god-tier",
+            "category": "general"
+        },
+        {
+            "abbr": "rip",
+            "full": "rest in peace / death",
+            "category": "general"
+        },
+        {
+            "abbr": "wts",
+            "full": "want to sell",
+            "category": "general"
+        },
+        {
+            "abbr": "wtb",
+            "full": "want to buy",
+            "category": "general"
+        },
+        {
+            "abbr": "wtt",
+            "full": "want to trade",
+            "category": "general"
+        },
+        {
+            "abbr": "tft",
+            "full": "the forbidden trove",
+            "category": "general"
+        },
+        {
+            "abbr": "afk",
+            "full": "away from keyboard",
+            "category": "general"
+        },
+        {
+            "abbr": "ign",
+            "full": "in-game name",
+            "category": "general"
+        },
+        {
+            "abbr": "hh",
+            "full": "headhunter",
+            "category": "item"
+        },
+        {
+            "abbr": "mb",
+            "full": "mageblood",
+            "category": "item"
+        },
+        {
+            "abbr": "squire",
+            "full": "the squire",
+            "category": "item"
+        },
+        {
+            "abbr": "howa",
+            "full": "hand of wisdom and action",
+            "category": "item"
+        },
+        {
+            "abbr": "cotb",
+            "full": "call of the brotherhood",
+            "category": "item"
+        },
+        {
+            "abbr": "omni",
+            "full": "crystallised omniscience",
+            "category": "item"
+        },
+        {
+            "abbr": "ashes",
+            "full": "ashes of the stars",
+            "category": "item"
+        },
+        {
+            "abbr": "nimis",
+            "full": "nimis",
+            "category": "item"
+        },
+        {
+            "abbr": "srs",
+            "full": "summon raging spirit",
+            "category": "skill"
+        },
+        {
+            "abbr": "ea",
+            "full": "explosive arrow",
+            "category": "skill"
+        },
+        {
+            "abbr": "ls",
+            "full": "lightning strike",
+            "category": "skill"
+        },
+        {
+            "abbr": "ts",
+            "full": "tornado shot",
+            "category": "skill"
+        },
+        {
+            "abbr": "la",
+            "full": "lightning arrow",
+            "category": "skill"
+        },
+        {
+            "abbr": "kb",
+            "full": "kinetic blast",
+            "category": "skill"
+        },
+        {
+            "abbr": "bf",
+            "full": "blade flurry",
+            "category": "skill"
+        },
+        {
+            "abbr": "bv",
+            "full": "blade vortex",
+            "category": "skill"
+        },
+        {
+            "abbr": "bb",
+            "full": "bladeblast",
+            "category": "skill"
+        },
+        {
+            "abbr": "ed",
+            "full": "essence drain",
+            "category": "skill"
+        },
+        {
+            "abbr": "ca",
+            "full": "caustic arrow",
+            "category": "skill"
+        },
+        {
+            "abbr": "tr",
+            "full": "toxic rain",
+            "category": "skill"
+        },
+        {
+            "abbr": "gc",
+            "full": "glacial cascade",
+            "category": "skill"
+        },
+        {
+            "abbr": "fb",
+            "full": "fireball",
+            "category": "skill"
+        },
+        {
+            "abbr": "ice nova",
+            "full": "ice nova",
+            "category": "skill"
+        },
+        {
+            "abbr": "cf",
+            "full": "corrupting fever",
+            "category": "skill"
+        },
+        {
+            "abbr": "lc",
+            "full": "lightning conduit",
+            "category": "skill"
+        },
+        {
+            "abbr": "dd",
+            "full": "detonate dead",
+            "category": "skill"
+        },
+        {
+            "abbr": "vd",
+            "full": "volatile dead",
+            "category": "skill"
+        },
+        {
+            "abbr": "arc",
+            "full": "arc",
+            "category": "skill"
+        },
+        {
+            "abbr": "spark",
+            "full": "spark",
+            "category": "skill"
+        },
+        {
+            "abbr": "flicker",
+            "full": "flicker strike",
+            "category": "skill"
+        },
+        {
+            "abbr": "cyclone",
+            "full": "cyclone",
+            "category": "skill"
+        },
+        {
+            "abbr": "smite",
+            "full": "smite",
+            "category": "skill"
+        },
+        {
+            "abbr": "recomb",
+            "full": "recombinator",
+            "category": "crafting"
+        },
+        {
+            "abbr": "essence",
+            "full": "essence crafting",
+            "category": "crafting"
+        },
+        {
+            "abbr": "fossil",
+            "full": "fossil crafting",
+            "category": "crafting"
+        },
+        {
+            "abbr": "harvest",
+            "full": "harvest crafting",
+            "category": "crafting"
+        },
+        {
+            "abbr": "aisling",
+            "full": "aisling veiled slam",
+            "category": "crafting"
+        },
+        {
+            "abbr": "benchcraft",
+            "full": "crafting bench",
+            "category": "crafting"
+        },
+        {
+            "abbr": "metacraft",
+            "full": "metacrafting",
+            "category": "crafting"
+        },
+        {
+            "abbr": "pbc",
+            "full": "prefixes cannot be changed",
+            "category": "crafting"
+        },
+        {
+            "abbr": "sbc",
+            "full": "suffixes cannot be changed",
+            "category": "crafting"
+        },
+        {
+            "abbr": "uber",
+            "full": "uber / pinnacle boss",
+            "category": "content"
+        },
+        {
+            "abbr": "maven",
+            "full": "the maven",
+            "category": "content"
+        },
+        {
+            "abbr": "sirus",
+            "full": "sirus",
+            "category": "content"
+        },
+        {
+            "abbr": "uber elder",
+            "full": "uber elder",
+            "category": "content"
+        },
+        {
+            "abbr": "shaper",
+            "full": "the shaper",
+            "category": "content"
+        },
+        {
+            "abbr": "elder",
+            "full": "the elder",
+            "category": "content"
+        },
+        {
+            "abbr": "cortex",
+            "full": "cortex",
+            "category": "content"
+        },
+        {
+            "abbr": "simu",
+            "full": "simulacrum",
+            "category": "content"
+        },
+        {
+            "abbr": "deli",
+            "full": "delirium",
+            "category": "content"
+        },
+        {
+            "abbr": "legion",
+            "full": "legion",
+            "category": "content"
+        },
+        {
+            "abbr": "breach",
+            "full": "breach",
+            "category": "content"
+        },
+        {
+            "abbr": "blight",
+            "full": "blight",
+            "category": "content"
+        },
+        {
+            "abbr": "heist",
+            "full": "heist",
+            "category": "content"
+        },
+        {
+            "abbr": "expedition",
+            "full": "expedition",
+            "category": "content"
+        },
+        {
+            "abbr": "sanctum",
+            "full": "sanctum",
+            "category": "content"
+        }
+    ]
+}

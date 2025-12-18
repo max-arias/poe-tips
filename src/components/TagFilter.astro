@@ -1,0 +1,369 @@
+---
+/**
+ * TagFilter - Clickable category and tag pills for filtering
+ */
+
+interface Props {
+    categories?: string[];
+    tags?: string[];
+    class?: string;
+}
+
+const {
+    categories = [
+        "crafting",
+        "farming",
+        "atlas",
+        "currency",
+        "mechanics",
+        "league",
+        "leveling",
+    ],
+    tags = [],
+    class: className,
+} = Astro.props;
+
+// Category display info
+const categoryInfo: Record<string, { label: string; icon: string }> = {
+    crafting: { label: "Crafting", icon: "🔨" },
+    farming: { label: "Farming", icon: "🌾" },
+    atlas: { label: "Atlas", icon: "🗺️" },
+    currency: { label: "Currency", icon: "💰" },
+    mechanics: { label: "Mechanics", icon: "⚙️" },
+    league: { label: "League", icon: "🎮" },
+    leveling: { label: "Leveling", icon: "📈" },
+};
+---
+
+<div class:list={["tag-filter", className]} id="tag-filter">
+    <div class="filter-section">
+        <span class="filter-label">Categories</span>
+        <div class="filter-pills">
+            {
+                categories.map((cat) => {
+                    const info = categoryInfo[cat] || {
+                        label: cat,
+                        icon: "📝",
+                    };
+                    return (
+                        <button
+                            type="button"
+                            class={`filter-pill category-pill badge-${cat}`}
+                            data-filter-type="category"
+                            data-filter-value={cat}
+                        >
+                            {info.icon} {info.label}
+                        </button>
+                    );
+                })
+            }
+        </div>
+    </div>
+
+    {
+        tags.length > 0 && (
+            <div class="filter-section">
+                <span class="filter-label">Popular Tags</span>
+                <div class="filter-pills">
+                    {tags.map((tag) => (
+                        <button
+                            type="button"
+                            class="filter-pill tag-pill"
+                            data-filter-type="tag"
+                            data-filter-value={tag}
+                        >
+                            #{tag}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+
+    <div class="active-filters" id="active-filters">
+        <span class="filter-label">Active Filters:</span>
+        <div class="active-pills" id="active-pills"></div>
+        <button type="button" class="clear-all-btn" id="clear-all-filters">
+            Clear All
+        </button>
+    </div>
+</div>
+
+<style>
+    .tag-filter {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .filter-section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .filter-label {
+        font-size: var(--text-xs);
+        font-weight: 500;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .filter-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+    }
+
+    .filter-pill {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--text-sm);
+        border-radius: var(--radius-full);
+        background-color: var(--bg-tertiary);
+        border: 1px solid transparent;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .filter-pill:hover {
+        border-color: var(--border-light);
+        color: var(--text-primary);
+    }
+
+    .filter-pill.active {
+        border-color: var(--accent);
+        color: var(--accent);
+        background-color: rgba(201, 170, 113, 0.1);
+    }
+
+    /* Category-specific colors when active */
+    .filter-pill.active.badge-crafting {
+        border-color: var(--color-crafting);
+        color: var(--color-crafting);
+        background-color: rgba(167, 139, 250, 0.1);
+    }
+    .filter-pill.active.badge-farming {
+        border-color: var(--color-farming);
+        color: var(--color-farming);
+        background-color: rgba(74, 222, 128, 0.1);
+    }
+    .filter-pill.active.badge-atlas {
+        border-color: var(--color-atlas);
+        color: var(--color-atlas);
+        background-color: rgba(96, 165, 250, 0.1);
+    }
+    .filter-pill.active.badge-currency {
+        border-color: var(--color-currency);
+        color: var(--color-currency);
+        background-color: rgba(251, 191, 36, 0.1);
+    }
+    .filter-pill.active.badge-mechanics {
+        border-color: var(--color-mechanics);
+        color: var(--color-mechanics);
+        background-color: rgba(244, 114, 182, 0.1);
+    }
+    .filter-pill.active.badge-league {
+        border-color: var(--color-league);
+        color: var(--color-league);
+        background-color: rgba(251, 146, 60, 0.1);
+    }
+    .filter-pill.active.badge-leveling {
+        border-color: var(--color-leveling);
+        color: var(--color-leveling);
+        background-color: rgba(45, 212, 191, 0.1);
+    }
+
+    .active-filters {
+        display: none;
+        align-items: center;
+        gap: var(--space-sm);
+        padding: var(--space-sm) var(--space-md);
+        background-color: var(--bg-tertiary);
+        border-radius: var(--radius-md);
+        margin-top: var(--space-sm);
+    }
+
+    .active-filters.visible {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .active-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        flex: 1;
+    }
+
+    .active-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 2px var(--space-sm);
+        font-size: var(--text-xs);
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--accent);
+        border-radius: var(--radius-full);
+        color: var(--accent);
+        cursor: pointer;
+    }
+
+    .active-pill:hover {
+        background-color: var(--warning-bg);
+        border-color: var(--warning);
+        color: var(--warning);
+    }
+
+    .clear-all-btn {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        background-color: transparent;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .clear-all-btn:hover {
+        color: var(--warning);
+        border-color: var(--warning);
+    }
+</style>
+
+<script>
+    interface FilterState {
+        categories: Set<string>;
+        tags: Set<string>;
+    }
+
+    function initTagFilter() {
+        const container = document.getElementById("tag-filter");
+        const activeFiltersEl = document.getElementById("active-filters");
+        const activePillsEl = document.getElementById("active-pills");
+        const clearAllBtn = document.getElementById("clear-all-filters");
+
+        if (!container || !activeFiltersEl || !activePillsEl || !clearAllBtn)
+            return;
+
+        const state: FilterState = {
+            categories: new Set(),
+            tags: new Set(),
+        };
+
+        // Handle filter pill clicks
+        container.querySelectorAll(".filter-pill").forEach((pill) => {
+            pill.addEventListener("click", () => {
+                const type = (pill as HTMLElement).dataset.filterType as
+                    | "category"
+                    | "tag";
+                const value = (pill as HTMLElement).dataset.filterValue;
+
+                if (!type || !value) return;
+
+                const set = type === "category" ? state.categories : state.tags;
+
+                if (set.has(value)) {
+                    set.delete(value);
+                    pill.classList.remove("active");
+                } else {
+                    set.add(value);
+                    pill.classList.add("active");
+                }
+
+                updateUI();
+                emitFilterChange();
+            });
+        });
+
+        // Handle external tag clicks (from TipCard)
+        window.addEventListener("tag-clicked", ((e: CustomEvent) => {
+            const tag = e.detail.tag;
+            if (tag && !state.tags.has(tag)) {
+                state.tags.add(tag);
+
+                // Update pill state if it exists
+                const pill = container.querySelector(
+                    `[data-filter-value="${tag}"]`,
+                );
+                if (pill) pill.classList.add("active");
+
+                updateUI();
+                emitFilterChange();
+            }
+        }) as EventListener);
+
+        // Clear all filters
+        clearAllBtn.addEventListener("click", () => {
+            state.categories.clear();
+            state.tags.clear();
+
+            container
+                .querySelectorAll(".filter-pill.active")
+                .forEach((pill) => {
+                    pill.classList.remove("active");
+                });
+
+            updateUI();
+            emitFilterChange();
+        });
+
+        function updateUI() {
+            const hasFilters = state.categories.size > 0 || state.tags.size > 0;
+            activeFiltersEl.classList.toggle("visible", hasFilters);
+
+            // Render active pills
+            activePillsEl.innerHTML = "";
+
+            state.categories.forEach((cat) => {
+                const pill = createActivePill(cat, "category");
+                activePillsEl.appendChild(pill);
+            });
+
+            state.tags.forEach((tag) => {
+                const pill = createActivePill(`#${tag}`, "tag", tag);
+                activePillsEl.appendChild(pill);
+            });
+        }
+
+        function createActivePill(
+            label: string,
+            type: string,
+            value?: string,
+        ): HTMLElement {
+            const pill = document.createElement("button");
+            pill.className = "active-pill";
+            pill.innerHTML = `${label} <span>×</span>`;
+            pill.addEventListener("click", () => {
+                const actualValue = value || label;
+                const set = type === "category" ? state.categories : state.tags;
+                set.delete(actualValue);
+
+                const filterPill = container.querySelector(
+                    `[data-filter-value="${actualValue}"]`,
+                );
+                if (filterPill) filterPill.classList.remove("active");
+
+                updateUI();
+                emitFilterChange();
+            });
+            return pill;
+        }
+
+        function emitFilterChange() {
+            window.dispatchEvent(
+                new CustomEvent("filter-changed", {
+                    detail: {
+                        categories: [...state.categories],
+                        tags: [...state.tags],
+                    },
+                }),
+            );
+        }
+    }
+
+    initTagFilter();
+    document.addEventListener("astro:page-load", initTagFilter);
+</script>

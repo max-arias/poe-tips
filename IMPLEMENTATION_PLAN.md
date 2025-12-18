@@ -18,8 +18,8 @@ A static, dark-themed website for Path of Exile 1 & 2 tips using Astro, with fuz
 - [x] Create TagFilter component for category/tag filtering
 
 ## Phase 3: Pages & Content ✅
-- [x] Build main tips listing page (`src/pages/index.astro`)
-- [x] Create tip detail page template (`src/pages/tips/[...slug].astro`)
+- [x] Build single-page layout with TOC (`src/pages/index.astro`)
+- [x] Render all tips inline with full MDX content
 - [x] Add 4 sample tips as MDX content
 
 ## Phase 4: Polish & Deploy ✅
@@ -50,13 +50,12 @@ publishedAt: date
 mayBeOutdated: boolean  # Shows warning banner if true (default: false)
 updatedAt: date?
 videoUrl: string?       # YouTube embed URL
-source:                 # Attribution for external content
-  name: string
-  url: string
+source:                 # Array of attributions for external content
+  - name: string
+    url: string
 difficulty: beginner | intermediate | advanced
 timeSensitivity: league-start | anytime  # When is this tip most useful?
 relatedTips: string[]   # Slugs of related tips
-estimatedValue: string  # e.g., "5-10 div/hour", "saves ~50c"
 prerequisites: string[] # Required unlocks (e.g., "Einhar unlocked", "Aisling bench")
 ```
 
@@ -128,9 +127,7 @@ src/
 ├── layouts/
 │   └── Layout.astro          # Base HTML layout
 ├── pages/
-│   ├── index.astro           # Main listing
-│   └── tips/
-│       └── [...slug].astro   # Tip detail pages
+│   └── index.astro           # Single-page with TOC + all tips
 └── styles/
     └── global.css            # Design system
 ```

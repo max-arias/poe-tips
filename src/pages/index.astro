@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import GameToggle from "../components/GameToggle.astro";
 import SearchBar from "../components/SearchBar.astro";
 import TagFilter from "../components/TagFilter.astro";
-import TipCard from "../components/TipCard.astro";
-import { getCollection } from "astro:content";
+import VideoEmbed from "../components/VideoEmbed.astro";
+import { getCollection, render } from "astro:content";
 
 // Get all tips
 const tips = await getCollection("tips");
@@ -16,6 +16,25 @@ const sortedTips = tips.sort(
 
 // Extract unique tags for the filter
 const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
+
+// Category display info
+const categoryInfo: Record<string, { label: string; icon: string }> = {
+	crafting: { label: "Crafting", icon: "🔨" },
+	farming: { label: "Farming", icon: "🌾" },
+	atlas: { label: "Atlas", icon: "🗺️" },
+	currency: { label: "Currency", icon: "💰" },
+	mechanics: { label: "Mechanics", icon: "⚙️" },
+	league: { label: "League", icon: "🎮" },
+	leveling: { label: "Leveling", icon: "📈" },
+};
+
+// Pre-render all tip content
+const renderedTips = await Promise.all(
+	sortedTips.map(async (tip) => {
+		const { Content } = await render(tip);
+		return { tip, Content };
+	}),
+);
 ---
 
 <Layout title="PoE Tips - Path of Exile Tips & Guides">
@@ -41,38 +60,283 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 			</div>
 		</section>
 
-		<section class="tips-section">
+		<!-- Table of Contents -->
+		<section class="toc-section">
 			<div class="container">
-				<div class="tips-header">
-					<h2 class="tips-count" id="tips-count">
-						{sortedTips.length} tips
-					</h2>
-				</div>
-
-				<div class="tips-list" id="tips-list">
+				<h2 class="toc-title">
+					<span class="toc-icon">📋</span>
+					Table of Contents
+					<span class="tips-count" id="tips-count"
+						>({sortedTips.length} tips)</span
+					>
+				</h2>
+				<nav class="toc-nav" id="toc-nav">
 					{
 						sortedTips.length === 0 ? (
-							<div class="empty-state">
-								<p>No tips yet. Check back soon!</p>
-							</div>
+							<p class="empty-state">
+								No tips yet. Check back soon!
+							</p>
 						) : (
-							sortedTips.map((tip) => (
-								<TipCard
-									title={tip.data.title}
-									description={tip.data.description}
-									slug={tip.id}
-									category={tip.data.category}
-									tags={tip.data.tags}
-									patchVersion={tip.data.patchVersion}
-									game={tip.data.game}
-									mayBeOutdated={tip.data.mayBeOutdated}
-									difficulty={tip.data.difficulty}
-									videoUrl={tip.data.videoUrl}
-									source={tip.data.source}
-									estimatedValue={tip.data.estimatedValue}
-								/>
-							))
+							<ul class="toc-list">
+								{sortedTips.map((tip) => {
+									const info = categoryInfo[
+										tip.data.category
+									] || { icon: "📝" };
+									return (
+										<li
+											class="toc-item"
+											data-game={tip.data.game}
+											data-category={tip.data.category}
+											data-tags={tip.data.tags.join(",")}
+										>
+											<a
+												href={`#${tip.id}`}
+												class="toc-link"
+											>
+												<span class="toc-category-icon">
+													{info.icon}
+												</span>
+												<span class="toc-link-title">
+													{tip.data.title}
+												</span>
+												{tip.data.mayBeOutdated && (
+													<span
+														class="toc-outdated"
+														title="May be outdated"
+													>
+														⚠️
+													</span>
+												)}
+											</a>
+										</li>
+									);
+								})}
+							</ul>
 						)
+					}
+				</nav>
+			</div>
+		</section>
+
+		<!-- All Tips Content -->
+		<section class="tips-section">
+			<div class="container">
+				<div class="tips-list" id="tips-list">
+					{
+						renderedTips.map(({ tip, Content }) => {
+							const info = categoryInfo[tip.data.category] || {
+								label: tip.data.category,
+								icon: "📝",
+							};
+							const formattedDate =
+								tip.data.publishedAt.toLocaleDateString(
+									"en-US",
+									{
+										year: "numeric",
+										month: "short",
+										day: "numeric",
+									},
+								);
+
+							return (
+								<article
+									class="tip-article"
+									id={tip.id}
+									data-game={tip.data.game}
+									data-category={tip.data.category}
+									data-tags={tip.data.tags.join(",")}
+								>
+									{tip.data.mayBeOutdated && (
+										<div class="warning-banner">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="16"
+												height="16"
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											>
+												<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+												<path d="M12 9v4" />
+												<path d="M12 17h.01" />
+											</svg>
+											<span>
+												This tip may be outdated (Patch{" "}
+												{tip.data.patchVersion})
+											</span>
+										</div>
+									)}
+
+									<header class="article-header">
+										<div class="badges">
+											<span
+												class={`badge badge-${tip.data.category}`}
+											>
+												{info.icon} {info.label}
+											</span>
+											{tip.data.difficulty && (
+												<span
+													class={`badge badge-${tip.data.difficulty}`}
+												>
+													{tip.data.difficulty
+														.charAt(0)
+														.toUpperCase() +
+														tip.data.difficulty.slice(
+															1,
+														)}
+												</span>
+											)}
+											{tip.data.game !== "both" && (
+												<span class="badge badge-game">
+													{tip.data.game === "poe1"
+														? "PoE 1"
+														: "PoE 2"}
+												</span>
+											)}
+										</div>
+
+										<h2 class="article-title">
+											<a
+												href={`#${tip.id}`}
+												class="title-anchor"
+											>
+												#
+											</a>
+											{tip.data.title}
+										</h2>
+
+										<div class="article-meta">
+											<span class="meta-item">
+												📌 {tip.data.patchVersion}
+											</span>
+											<span class="meta-item">
+												📅 {formattedDate}
+											</span>
+											{tip.data.estimatedValue && (
+												<span class="meta-item value">
+													💎 {tip.data.estimatedValue}
+												</span>
+											)}
+											{tip.data.timeSensitivity && (
+												<span class="meta-item">
+													⏰{" "}
+													{tip.data
+														.timeSensitivity ===
+													"league-start"
+														? "League start"
+														: "Anytime"}
+												</span>
+											)}
+										</div>
+
+										{tip.data.prerequisites &&
+											tip.data.prerequisites.length >
+												0 && (
+												<div class="prerequisites">
+													<strong>
+														Prerequisites:
+													</strong>
+													<ul>
+														{tip.data.prerequisites.map(
+															(prereq) => (
+																<li>
+																	{prereq}
+																</li>
+															),
+														)}
+													</ul>
+												</div>
+											)}
+									</header>
+
+									{tip.data.videoUrl && (
+										<div class="video-section">
+											<VideoEmbed
+												url={tip.data.videoUrl}
+												title={tip.data.title}
+											/>
+										</div>
+									)}
+
+									<div class="article-content prose">
+										<Content />
+									</div>
+
+									<footer class="article-footer">
+										<div class="tags-section">
+											<span class="tags-label">
+												Tags:
+											</span>
+											<div class="tags">
+												{tip.data.tags.map((tag) => (
+													<button
+														type="button"
+														class="tag"
+														data-tag={tag}
+													>
+														#{tag}
+													</button>
+												))}
+											</div>
+										</div>
+
+										{tip.data.source &&
+											tip.data.source.length > 0 && (
+												<div class="source-section">
+													<span>Sources:</span>
+													{tip.data.source.map(
+														(src, i) => (
+															<>
+																<a
+																	href={
+																		src.url
+																	}
+																	target="_blank"
+																	rel="noopener noreferrer"
+																>
+																	{src.name}
+																	<svg
+																		xmlns="http://www.w3.org/2000/svg"
+																		width="12"
+																		height="12"
+																		viewBox="0 0 24 24"
+																		fill="none"
+																		stroke="currentColor"
+																		stroke-width="2"
+																		stroke-linecap="round"
+																		stroke-linejoin="round"
+																	>
+																		<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+																		<polyline points="15 3 21 3 21 9" />
+																		<line
+																			x1="10"
+																			x2="21"
+																			y1="14"
+																			y2="3"
+																		/>
+																	</svg>
+																</a>
+																{i <
+																	tip.data
+																		.source!
+																		.length -
+																		1 && (
+																	<span class="source-sep">
+																		•
+																	</span>
+																)}
+															</>
+														),
+													)}
+												</div>
+											)}
+									</footer>
+								</article>
+							);
+						})
 					}
 				</div>
 
@@ -143,25 +407,369 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 		gap: var(--space-lg);
 	}
 
-	.tips-section {
-		padding: var(--space-xl) 0;
+	/* Table of Contents */
+	.toc-section {
+		padding: var(--space-lg) 0;
+		background-color: var(--bg-primary);
+		border-bottom: 1px solid var(--border);
 	}
 
-	.tips-header {
-		margin-bottom: var(--space-lg);
+	.toc-title {
+		font-size: var(--text-lg);
+		font-weight: 600;
+		margin: 0 0 var(--space-md) 0;
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+	}
+
+	.toc-icon {
+		font-size: var(--text-xl);
 	}
 
 	.tips-count {
 		font-size: var(--text-sm);
-		font-weight: 500;
+		font-weight: 400;
 		color: var(--text-muted);
+	}
+
+	.toc-list {
+		list-style: none;
+		padding: 0;
 		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: var(--space-xs);
+	}
+
+	.toc-item {
+		transition: opacity var(--transition-fast);
+	}
+
+	.toc-item.hidden {
+		display: none;
+	}
+
+	.toc-link {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+		padding: var(--space-sm) var(--space-md);
+		background-color: var(--bg-secondary);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		color: var(--text-primary);
+		text-decoration: none;
+		transition: all var(--transition-fast);
+	}
+
+	.toc-link:hover {
+		border-color: var(--accent);
+		background-color: var(--bg-tertiary);
+	}
+
+	.toc-category-icon {
+		font-size: var(--text-base);
+	}
+
+	.toc-link-title {
+		flex: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-size: var(--text-sm);
+	}
+
+	.toc-outdated {
+		font-size: var(--text-sm);
+	}
+
+	/* Tips Section */
+	.tips-section {
+		padding: var(--space-xl) 0;
 	}
 
 	.tips-list {
 		display: flex;
 		flex-direction: column;
+		gap: var(--space-2xl);
+	}
+
+	.tip-article {
+		scroll-margin-top: 80px;
+		padding: var(--space-xl);
+		background-color: var(--bg-secondary);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		transition: opacity var(--transition-fast);
+	}
+
+	.tip-article.hidden {
+		display: none;
+	}
+
+	.tip-article .warning-banner {
+		margin-bottom: var(--space-lg);
+	}
+
+	.article-header {
+		margin-bottom: var(--space-lg);
+	}
+
+	.badges {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-xs);
+		margin-bottom: var(--space-sm);
+	}
+
+	.badge-game {
+		background-color: rgba(96, 165, 250, 0.2);
+		color: #60a5fa;
+	}
+
+	.article-title {
+		font-size: var(--text-2xl);
+		font-weight: 700;
+		margin: 0 0 var(--space-sm) 0;
+		line-height: var(--leading-tight);
+	}
+
+	.title-anchor {
+		color: var(--text-muted);
+		text-decoration: none;
+		margin-right: var(--space-sm);
+		opacity: 0;
+		transition: opacity var(--transition-fast);
+	}
+
+	.tip-article:hover .title-anchor,
+	.title-anchor:focus {
+		opacity: 1;
+	}
+
+	.title-anchor:hover {
+		color: var(--accent);
+	}
+
+	.article-meta {
+		display: flex;
+		flex-wrap: wrap;
 		gap: var(--space-md);
+		font-size: var(--text-sm);
+		color: var(--text-muted);
+	}
+
+	.meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-xs);
+	}
+
+	.meta-item.value {
+		color: var(--color-currency);
+	}
+
+	.prerequisites {
+		margin-top: var(--space-md);
+		padding: var(--space-md);
+		background-color: var(--bg-tertiary);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--border);
+	}
+
+	.prerequisites strong {
+		color: var(--text-primary);
+		font-size: var(--text-sm);
+	}
+
+	.prerequisites ul {
+		margin: var(--space-sm) 0 0;
+		padding-left: var(--space-lg);
+		font-size: var(--text-sm);
+		color: var(--text-secondary);
+	}
+
+	.video-section {
+		margin-bottom: var(--space-lg);
+	}
+
+	/* Prose styles for MDX content */
+	.prose {
+		color: var(--text-primary);
+		line-height: var(--leading-relaxed);
+	}
+
+	.prose :global(h2) {
+		font-size: var(--text-xl);
+		font-weight: 600;
+		margin-top: var(--space-xl);
+		margin-bottom: var(--space-md);
+		padding-bottom: var(--space-sm);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.prose :global(h3) {
+		font-size: var(--text-lg);
+		font-weight: 600;
+		margin-top: var(--space-lg);
+		margin-bottom: var(--space-sm);
+	}
+
+	.prose :global(p) {
+		margin-bottom: var(--space-md);
+	}
+
+	.prose :global(ul),
+	.prose :global(ol) {
+		margin-bottom: var(--space-md);
+		padding-left: var(--space-lg);
+	}
+
+	.prose :global(li) {
+		margin-bottom: var(--space-xs);
+	}
+
+	.prose :global(strong) {
+		color: var(--text-primary);
+		font-weight: 600;
+	}
+
+	.prose :global(a) {
+		color: var(--accent);
+	}
+
+	.prose :global(a:hover) {
+		color: var(--accent-hover);
+		text-decoration: underline;
+	}
+
+	.prose :global(code) {
+		font-family: var(--font-mono);
+		font-size: 0.9em;
+		padding: 0.2em 0.4em;
+		background-color: var(--bg-tertiary);
+		border-radius: var(--radius-sm);
+	}
+
+	.prose :global(pre) {
+		margin: var(--space-md) 0;
+		padding: var(--space-md);
+		background-color: var(--bg-tertiary);
+		border-radius: var(--radius-md);
+		overflow-x: auto;
+	}
+
+	.prose :global(pre code) {
+		padding: 0;
+		background: none;
+	}
+
+	.prose :global(blockquote) {
+		margin: var(--space-md) 0;
+		padding: var(--space-md);
+		border-left: 4px solid var(--accent);
+		background-color: var(--bg-tertiary);
+		font-style: italic;
+		color: var(--text-secondary);
+	}
+
+	.prose :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		margin: var(--space-md) 0;
+		font-size: var(--text-sm);
+	}
+
+	.prose :global(th),
+	.prose :global(td) {
+		padding: var(--space-sm) var(--space-md);
+		border: 1px solid var(--border);
+		text-align: left;
+	}
+
+	.prose :global(th) {
+		background-color: var(--bg-tertiary);
+		font-weight: 600;
+	}
+
+	.prose :global(img) {
+		border-radius: var(--radius-md);
+		margin: var(--space-md) 0;
+	}
+
+	.prose :global(hr) {
+		border: none;
+		border-top: 1px solid var(--border);
+		margin: var(--space-xl) 0;
+	}
+
+	.article-footer {
+		margin-top: var(--space-lg);
+		padding-top: var(--space-md);
+		border-top: 1px solid var(--border);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	.tags-section {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+		flex-wrap: wrap;
+	}
+
+	.tags-label {
+		font-size: var(--text-sm);
+		color: var(--text-muted);
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-xs);
+	}
+
+	.tag {
+		padding: 2px var(--space-sm);
+		font-size: var(--text-xs);
+		color: var(--text-muted);
+		background-color: var(--bg-tertiary);
+		border: 1px solid transparent;
+		border-radius: var(--radius-full);
+		cursor: pointer;
+		transition: all var(--transition-fast);
+	}
+
+	.tag:hover {
+		color: var(--accent);
+		border-color: var(--accent);
+		background-color: rgba(201, 170, 113, 0.1);
+	}
+
+	.source-section {
+		font-size: var(--text-sm);
+		color: var(--text-muted);
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+		flex-wrap: wrap;
+	}
+
+	.source-section a {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		color: var(--accent-dim);
+	}
+
+	.source-section a:hover {
+		color: var(--accent);
+	}
+
+	.source-sep {
+		color: var(--text-muted);
 	}
 
 	.empty-state,
@@ -188,6 +796,14 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 			flex-direction: column;
 			align-items: flex-start;
 		}
+
+		.toc-list {
+			grid-template-columns: 1fr;
+		}
+
+		.article-title {
+			font-size: var(--text-xl);
+		}
 	}
 </style>
 
@@ -197,11 +813,11 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 
 	interface TipData {
 		element: HTMLElement;
+		tocElement: HTMLElement | null;
 		game: string;
 		category: string;
 		tags: string[];
 		title: string;
-		description: string;
 	}
 
 	interface FilterState {
@@ -214,27 +830,34 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 
 	function initFiltering() {
 		const tipsList = document.getElementById("tips-list");
+		const tocNav = document.getElementById("toc-nav");
 		const tipsCountEl = document.getElementById("tips-count");
 		const noResultsEl = document.getElementById("no-results");
 		const resetBtn = document.getElementById("reset-filters");
 
-		if (!tipsList || !tipsCountEl || !noResultsEl) return;
+		if (!tipsList || !tipsCountEl || !noResultsEl || !tocNav) return;
 
 		// Build tip data for filtering
-		const tipCards = tipsList.querySelectorAll<HTMLElement>(".tip-card");
-		const tips: TipData[] = Array.from(tipCards).map((el) => ({
-			element: el,
-			game: el.dataset.game || "both",
-			category: el.dataset.category || "",
-			tags: (el.dataset.tags || "").split(",").filter(Boolean),
-			title: el.querySelector(".card-title")?.textContent || "",
-			description:
-				el.querySelector(".card-description")?.textContent || "",
-		}));
+		const tipArticles =
+			tipsList.querySelectorAll<HTMLElement>(".tip-article");
+		const tips: TipData[] = Array.from(tipArticles).map((el) => {
+			const id = el.id;
+			const tocItem =
+				tocNav.querySelector<HTMLElement>(`[href="#${id}"]`)
+					?.parentElement || null;
+			return {
+				element: el,
+				tocElement: tocItem,
+				game: el.dataset.game || "both",
+				category: el.dataset.category || "",
+				tags: (el.dataset.tags || "").split(",").filter(Boolean),
+				title: el.querySelector(".article-title")?.textContent || "",
+			};
+		});
 
 		// Initialize Fuse for fuzzy search
 		const fuse = new Fuse(tips, {
-			keys: ["title", "description", "tags", "category"],
+			keys: ["title", "tags", "category"],
 			threshold: 0.4,
 			ignoreLocation: true,
 			includeScore: true,
@@ -273,9 +896,23 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 			applyFilters();
 		}) as EventListener);
 
+		// Tag clicks from tip articles
+		document.querySelectorAll(".tag[data-tag]").forEach((tag) => {
+			tag.addEventListener("click", (e) => {
+				e.preventDefault();
+				const tagName = (e.target as HTMLElement).dataset.tag;
+				if (tagName) {
+					window.dispatchEvent(
+						new CustomEvent("tag-clicked", {
+							detail: { tag: tagName },
+						}),
+					);
+				}
+			});
+		});
+
 		// Reset button
 		resetBtn?.addEventListener("click", () => {
-			// Clear search
 			const searchInput = document.getElementById(
 				"search-input",
 			) as HTMLInputElement;
@@ -286,7 +923,6 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 					?.classList.remove("has-value");
 			}
 
-			// Clear filters
 			document.getElementById("clear-all-filters")?.click();
 
 			state.query = "";
@@ -307,7 +943,6 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 						? state.expandedTerms
 						: [state.query.toLowerCase()];
 
-				// Search with all expanded terms
 				const results = new Set<TipData>();
 				searchTerms.forEach((term) => {
 					if (!term) return;
@@ -327,22 +962,23 @@ const allTags = [...new Set(tips.flatMap((tip) => tip.data.tags))].sort();
 					visible = tip.game === state.game || tip.game === "both";
 				}
 
-				// Category filter (OR logic - match any)
+				// Category filter (OR logic)
 				if (visible && state.categories.length > 0) {
 					visible = state.categories.includes(tip.category);
 				}
 
-				// Tag filter (AND logic - match all)
+				// Tag filter (AND logic)
 				if (visible && state.tags.length > 0) {
 					visible = state.tags.every((tag) => tip.tags.includes(tag));
 				}
 
 				tip.element.classList.toggle("hidden", !visible);
+				tip.tocElement?.classList.toggle("hidden", !visible);
 				if (visible) visibleCount++;
 			});
 
 			// Update count and no-results state
-			tipsCountEl.textContent = `${visibleCount} tip${visibleCount !== 1 ? "s" : ""}`;
+			tipsCountEl.textContent = `(${visibleCount} tip${visibleCount !== 1 ? "s" : ""})`;
 			noResultsEl.classList.toggle(
 				"visible",
 				visibleCount === 0 && tips.length > 0,

@@ -136,9 +136,13 @@ const gameLabels: Record<string, string> = {
                     </span>
                 )
             }
-            <span class="meta-item patch-version" title="Patch version">
-                📌 {patchVersion}
-            </span>
+            {
+                patchVersion && (
+                    <span class="meta-item patch-version" title="Patch version">
+                        📌 {patchVersion}
+                    </span>
+                )
+            }
             {
                 estimatedValue && (
                     <span

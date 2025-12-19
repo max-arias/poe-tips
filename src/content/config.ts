@@ -10,7 +10,7 @@ const tips = defineCollection({
         game: z.enum(['poe1', 'poe2', 'both']),
         category: z.enum(['crafting', 'farming', 'atlas', 'currency', 'mechanics', 'league', 'leveling']),
         tags: z.array(z.string()),
-        patchVersion: z.string(),
+        patchVersion: z.string().optional(),
         publishedAt: z.date(),
 
         // Optional fields

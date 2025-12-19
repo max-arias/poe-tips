@@ -209,17 +209,14 @@ const renderedTips = await Promise.all(
 										</h2>
 
 										<div class="article-meta">
-											<span class="meta-item">
-												📌 {tip.data.patchVersion}
-											</span>
+											{tip.data.patchVersion && (
+												<span class="meta-item">
+													📌 {tip.data.patchVersion}
+												</span>
+											)}
 											<span class="meta-item">
 												📅 {formattedDate}
 											</span>
-											{tip.data.estimatedValue && (
-												<span class="meta-item value">
-													💎 {tip.data.estimatedValue}
-												</span>
-											)}
 											{tip.data.timeSensitivity && (
 												<span class="meta-item">
 													⏰{" "}
